@@ -1,0 +1,40 @@
+
+RAxML-NG v. 0.6.0git BETA released on 19.10.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/bin/raxml-ng-static --support --tree /home/alexey/hits/ngtest/data/dna2311.tree --bs-trees /home/alexey/hits/ngtest/data/dna2311.bsrep --bs-metric tbe --prefix /home/alexey/hits/ngtest/out/0.7.0/support_DNA2311_tbe/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Compute bipartition support (Transfer Bootstrap)
+  start tree(s): user
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+Reading reference tree from file: /home/alexey/hits/ngtest/data/dna2311.tree
+Reference tree size: 2311
+
+Reading bootstrap trees from file: /home/alexey/hits/ngtest/data/dna2311.bsrep
+Bootstrap trees found: 300
+
+Best ML tree with Transfer bootstrap (TBE) support values saved to: /home/alexey/hits/ngtest/out/0.7.0/support_DNA2311_tbe/test.raxml.support
+
+Execution log saved to: /home/alexey/hits/ngtest/out/0.7.0/support_DNA2311_tbe/test.raxml.log
+
+Analysis started: 22-Oct-2018 16:50:54 / finished: 22-Oct-2018 16:51:41
+
+Elapsed time: 46.222 seconds
+

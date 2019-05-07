@@ -1,0 +1,32 @@
+
+RAxML-NG v. 0.5.1b BETA released on 01.12.2017 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.5.1b --support --tree /home/alexey/hits/ngtest/data/dna2311.tree --bs-trees /home/alexey/hits/ngtest/data/dna2311.bsrep --prefix /home/alexey/hits/ngtest/out/0.5.1b/support_DNA2311_fbp/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Compute bipartition support
+  start tree(s): user
+  random seed: 1
+  tip-inner: ON
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: OFF
+  branch lengths: ML estimate (linked)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+Reading reference tree from file: /home/alexey/hits/ngtest/data/dna2311.tree
+Reference tree size: 2311
+
+Reading bootstrap trees from file: /home/alexey/hits/ngtest/data/dna2311.bsrep
+Bootstrap trees found: 300
+
+Best ML tree with bootstrap support values saved to: /home/alexey/hits/ngtest/out/0.5.1b/support_DNA2311_fbp/test.raxml.support
+

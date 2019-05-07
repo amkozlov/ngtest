@@ -1,0 +1,66 @@
+
+RAxML-NG v. 0.6.0 BETA released on 16.06.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.6 --parse --msa /home/alexey/hits/ngtest/data/prot21.fa --model /home/alexey/hits/ngtest/data/prot21.part2 --prefix /home/alexey/hits/ngtest/out/0.6.0/parse_PROT_part_unlinked/test --seed 1 --threads 1 --redo --brlen unlinked
+
+Analysis options:
+  run mode: Alignment parsing and compression
+  start tree(s): 
+  random seed: 1
+  tip-inner: ON
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: OFF
+  branch lengths: unlinked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+[00:00:00] Reading alignment from file: /home/alexey/hits/ngtest/data/prot21.fa
+[00:00:00] Loaded alignment with 21 taxa and 113 sites
+
+Alignment comprises 3 partitions and 112 patterns
+
+Partition 0: p1
+Model: LG+G4m
+Alignment sites / patterns: 53 / 53
+Gaps: 13.93 %
+Invariant sites: 13.21 %
+
+Partition 1: p2
+Model: WAG+I
+Alignment sites / patterns: 30 / 29
+Gaps: 17.46 %
+Invariant sites: 13.33 %
+
+Partition 2: p3
+Model: JTT
+Alignment sites / patterns: 30 / 30
+Gaps: 5.56 %
+Invariant sites: 10.00 %
+
+
+NOTE: Binary MSA file created: /home/alexey/hits/ngtest/out/0.6.0/parse_PROT_part_unlinked/test.raxml.rba
+
+* Estimated memory requirements                : 1 MB
+
+* Recommended number of threads / MPI processes: 1
+
+Please note that numbers given above are rough estimates only. 
+Actual memory consumption and parallel performance on your system may differ!
+
+Alignment can be successfully read by RAxML-NG.
+
+
+Execution log saved to: /home/alexey/hits/ngtest/out/0.6.0/parse_PROT_part_unlinked/test.raxml.log
+
+Analysis started: 20-Oct-2018 02:17:33 / finished: 20-Oct-2018 02:17:33
+
+Elapsed time: 0.005 seconds
+

@@ -1,0 +1,32 @@
+
+RAxML-NG v. 0.8.1git BETA released on 14.03.2019 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called at 14-Mar-2019 17:11:40 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-static --consense MRE --tree /home/alex/hits/ngtest/data/dna2311.bsrep --prefix /home/alex/hits/ngtest/out/0.8.1git/consense_DNA2311_all/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Build consensus tree (MRE)
+  start tree(s): user
+  random seed: 1
+  SIMD kernels: AVX2
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+Reading input trees from file: /home/alex/hits/ngtest/data/dna2311.bsrep
+Loaded 300 trees with 2311 taxa.
+
+MRE consensus tree saved to: /home/alex/hits/ngtest/out/0.8.1git/consense_DNA2311_all/test.raxml.consensusTreeMRE
+
+Execution log saved to: /home/alex/hits/ngtest/out/0.8.1git/consense_DNA2311_all/test.raxml.log
+
+Analysis started: 14-Mar-2019 17:11:40 / finished: 14-Mar-2019 17:11:44
+
+Elapsed time: 4.202 seconds
+

@@ -1,0 +1,93 @@
+
+RAxML-NG v. 0.6.0 BETA released on 16.06.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.6 --msa /home/alexey/hits/ngtest/data/prot21.fa --model /home/alexey/hits/ngtest/data/prot21.part2 --prefix /home/alexey/hits/ngtest/out/0.6.0/search_PROT_part_linked/test --seed 1 --threads 1 --redo --brlen linked
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1
+  tip-inner: ON
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: OFF
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alexey/hits/ngtest/data/prot21.fa
+[00:00:00] Loaded alignment with 21 taxa and 113 sites
+
+Alignment comprises 3 partitions and 112 patterns
+
+Partition 0: p1
+Model: LG+G4m
+Alignment sites / patterns: 53 / 53
+Gaps: 13.93 %
+Invariant sites: 13.21 %
+
+Partition 1: p2
+Model: WAG+I
+Alignment sites / patterns: 30 / 29
+Gaps: 17.46 %
+Invariant sites: 13.33 %
+
+Partition 2: p3
+Model: JTT
+Alignment sites / patterns: 30 / 30
+Gaps: 5.56 %
+Invariant sites: 10.00 %
+
+
+NOTE: Binary MSA file created: /home/alexey/hits/ngtest/out/0.6.0/search_PROT_part_linked/test.raxml.rba
+
+[00:00:00] Generating 1 random starting tree(s) with 21 taxa
+[00:00:00] Data distribution: partitions/thread: 3-3, patterns/thread: 112-112
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -4187.053224] Initial branch length optimization
+[00:00:00 -3641.132771] Model parameter optimization (eps = 10.000000)
+[00:00:00 -3640.473969] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -2970.912754] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -2970.910313] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -2970.910313] Model parameter optimization (eps = 3.000000)
+[00:00:00 -2970.286099] FAST spr round 1 (radius: 5)
+[00:00:00 -2916.112701] FAST spr round 2 (radius: 5)
+[00:00:01 -2901.375316] FAST spr round 3 (radius: 5)
+[00:00:01 -2900.434959] FAST spr round 4 (radius: 5)
+[00:00:02 -2900.277007] FAST spr round 5 (radius: 5)
+[00:00:02 -2900.238113] Model parameter optimization (eps = 1.000000)
+[00:00:02 -2900.172578] SLOW spr round 1 (radius: 5)
+[00:00:03 -2900.172383] SLOW spr round 2 (radius: 10)
+[00:00:03 -2900.172382] SLOW spr round 3 (radius: 15)
+[00:00:04 -2900.172382] SLOW spr round 4 (radius: 20)
+[00:00:04 -2900.172382] Model parameter optimization (eps = 0.100000)
+
+[00:00:04] ML tree search #1, logLikelihood: -2900.171970
+
+
+Final LogLikelihood: -2900.171970
+
+NOTE: Tree does not lie on a phylogenetic terrace.
+
+Best ML tree saved to: /home/alexey/hits/ngtest/out/0.6.0/search_PROT_part_linked/test.raxml.bestTree
+Optimized model saved to: /home/alexey/hits/ngtest/out/0.6.0/search_PROT_part_linked/test.raxml.bestModel
+
+Execution log saved to: /home/alexey/hits/ngtest/out/0.6.0/search_PROT_part_linked/test.raxml.log
+
+Analysis started: 20-Oct-2018 02:17:25 / finished: 20-Oct-2018 02:17:30
+
+Elapsed time: 4.493 seconds
+

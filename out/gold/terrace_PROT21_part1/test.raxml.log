@@ -1,0 +1,28 @@
+
+RAxML-NG v. 0.6.0 BETA released on 16.06.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.6 --terrace --msa /home/alexey/hits/ngtest/data/prot21.fa --tree /home/alexey/hits/ngtest/data/prot21.tree --model /home/alexey/hits/ngtest/data/prot21.part --prefix /home/alexey/hits/ngtest/out/0.6.0/terrace_PROT21_part1/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Count/enumerate trees on a phylogenetic terrace
+  start tree(s): user
+  random seed: 1
+  tip-inner: ON
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: OFF
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+
+ERROR: LG4X and FreeRate models are not supported in linked branch length mode.
+Please use the '--brlen scaled' option to switch into proportional branch length mode.
+

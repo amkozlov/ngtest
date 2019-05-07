@@ -1,0 +1,32 @@
+
+RAxML-NG v. 0.8.1git BETA released on 14.03.2019 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called at 14-Mar-2019 16:32:54 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-static --consense mr80 --tree /home/alex/hits/ngtest/data/prot21.bsrep --prefix /home/alex/hits/ngtest/out/0.8.1git/consense_PROT21_all/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Build consensus tree (MR80)
+  start tree(s): user
+  random seed: 1
+  SIMD kernels: AVX2
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+Reading input trees from file: /home/alex/hits/ngtest/data/prot21.bsrep
+Loaded 100 trees with 21 taxa.
+
+MR80 consensus tree saved to: /home/alex/hits/ngtest/out/0.8.1git/consense_PROT21_all/test.raxml.consensusTreeMR80
+
+Execution log saved to: /home/alex/hits/ngtest/out/0.8.1git/consense_PROT21_all/test.raxml.log
+
+Analysis started: 14-Mar-2019 16:32:54 / finished: 14-Mar-2019 16:32:54
+
+Elapsed time: 0.005 seconds
+

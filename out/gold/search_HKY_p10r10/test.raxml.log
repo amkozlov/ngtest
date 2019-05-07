@@ -1,0 +1,84 @@
+
+RAxML-NG v. 0.7.0 BETA released on 22.10.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.7 --msa /home/alexey/hits/ngtest/data/dna8.fa --model HKY+G{0.73}+I --prefix /home/alexey/hits/ngtest/out/0.7.0/search_HKY_p10r10/test --seed 1 --threads 2 --redo
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: PTHREADS (2 threads), thread pinning: OFF
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alexey/hits/ngtest/data/dna8.fa
+[00:00:00] Loaded alignment with 8 taxa and 705 sites
+
+Alignment comprises 1 partitions and 332 patterns
+
+Partition 0: noname
+Model: HKY+FO+I+G4m{0.73}
+Alignment sites / patterns: 705 / 332
+Gaps: 2.39 %
+Invariant sites: 2.13 %
+
+
+NOTE: Binary MSA file created: /home/alexey/hits/ngtest/out/0.7.0/search_HKY_p10r10/test.raxml.rba
+
+[00:00:00] Generating 1 random starting tree(s) with 8 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 166 / 2656
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -4554.332110] Initial branch length optimization
+[00:00:00 -4347.586848] Model parameter optimization (eps = 10.000000)
+[00:00:00 -4126.649879] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -4078.944873] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -4078.944873] Model parameter optimization (eps = 3.000000)
+[00:00:00 -4077.788066] FAST spr round 1 (radius: 5)
+[00:00:00 -4073.224447] FAST spr round 2 (radius: 5)
+[00:00:00 -4072.674103] FAST spr round 3 (radius: 5)
+[00:00:00 -4072.673818] Model parameter optimization (eps = 1.000000)
+[00:00:00 -4072.508961] SLOW spr round 1 (radius: 5)
+[00:00:00 -4072.503468] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -4072.480452
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.730000 (user),  weights&rates: (0.250000,0.080604) (0.250000,0.377348) (0.250000,0.935498) (0.250000,2.606550) 
+   P-inv (ML): 0.316651
+   Base frequencies (ML): 0.337069 0.313233 0.105747 0.243951 
+   Substitution rates (ML): 1.000000 5.876462 1.000000 1.000000 5.876462 1.000000 
+
+Final LogLikelihood: -4072.480452
+
+AIC score: 8180.960904 / AICc score: 8181.957989 / BIC score: 8263.008465
+Free parameters (model + branch lengths): 18
+
+Best ML tree saved to: /home/alexey/hits/ngtest/out/0.7.0/search_HKY_p10r10/test.raxml.bestTree
+Optimized model saved to: /home/alexey/hits/ngtest/out/0.7.0/search_HKY_p10r10/test.raxml.bestModel
+
+Execution log saved to: /home/alexey/hits/ngtest/out/0.7.0/search_HKY_p10r10/test.raxml.log
+
+Analysis started: 22-Oct-2018 23:38:55 / finished: 22-Oct-2018 23:38:55
+
+Elapsed time: 0.167 seconds
+

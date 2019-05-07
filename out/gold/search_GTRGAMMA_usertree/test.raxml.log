@@ -1,0 +1,79 @@
+
+RAxML-NG v. 0.6.0 BETA released on 16.06.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.6 --msa /home/alexey/hits/ngtest/data/dna8.fa --model GTR+G --tree /home/alexey/hits/ngtest/data/dna8.tree --prefix /home/alexey/hits/ngtest/out/0.6.0/search_GTRGAMMA_usertree/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): user
+  random seed: 1
+  tip-inner: ON
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: OFF
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alexey/hits/ngtest/data/dna8.fa
+[00:00:00] Loaded alignment with 8 taxa and 705 sites
+
+Alignment comprises 1 partitions and 332 patterns
+
+Partition 0: noname
+Model: GTR+FO+G4m
+Alignment sites / patterns: 705 / 332
+Gaps: 2.39 %
+Invariant sites: 2.13 %
+
+
+NOTE: Binary MSA file created: /home/alexey/hits/ngtest/out/0.6.0/search_GTRGAMMA_usertree/test.raxml.rba
+
+[00:00:00] Loading user starting tree(s) from: /home/alexey/hits/ngtest/data/dna8.tree
+[00:00:00] Data distribution: partitions/thread: 1-1, patterns/thread: 332-332
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -4411.199085] Initial branch length optimization
+[00:00:00 -4291.345164] Model parameter optimization (eps = 10.000000)
+[00:00:00 -4074.801739] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -4074.487038] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -4074.487038] Model parameter optimization (eps = 3.000000)
+[00:00:00 -4072.272189] FAST spr round 1 (radius: 5)
+[00:00:00 -4072.131626] FAST spr round 2 (radius: 5)
+[00:00:00 -4072.131137] Model parameter optimization (eps = 1.000000)
+[00:00:00 -4070.554698] SLOW spr round 1 (radius: 5)
+[00:00:00 -4070.486570] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -4069.175622
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.299218 (ML),  weights&rates: (0.250000,0.005232) (0.250000,0.103887) (0.250000,0.594488) (0.250000,3.296393) 
+   Base frequencies (ML): 0.343204 0.297326 0.127004 0.232466 
+   Substitution rates (ML): 1.739623 5.469752 2.138581 0.974912 14.317483 1.000000 
+
+Final LogLikelihood: -4069.175622
+
+Best ML tree saved to: /home/alexey/hits/ngtest/out/0.6.0/search_GTRGAMMA_usertree/test.raxml.bestTree
+Optimized model saved to: /home/alexey/hits/ngtest/out/0.6.0/search_GTRGAMMA_usertree/test.raxml.bestModel
+
+Execution log saved to: /home/alexey/hits/ngtest/out/0.6.0/search_GTRGAMMA_usertree/test.raxml.log
+
+Analysis started: 20-Oct-2018 02:17:30 / finished: 20-Oct-2018 02:17:30
+
+Elapsed time: 0.334 seconds
+

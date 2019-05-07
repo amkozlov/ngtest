@@ -1,0 +1,79 @@
+
+RAxML-NG v. 0.6.0 BETA released on 16.06.2018 by The Exelixis Lab.
+Authors: Alexey Kozlov, Alexandros Stamatakis, Diego Darriba, Tomas Flouri, Benoit Morel.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+WARNING: This is a BETA release, please use at your own risk!
+
+RAxML-NG was called as follows:
+
+/home/alexey/hits/raxml-ng/release/raxml-ng-0.6 --msa /home/alexey/hits/ngtest/data/dna57.phy --model GTR+G --tree rand{5} --tree-constraint /home/alexey/hits/ngtest/data/dna57.conspart.tree --outgroup Out2 --prefix /home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test --seed 1 --threads 1 --redo --tip-inner on
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (5)
+  topological constraint: /home/alexey/hits/ngtest/data/dna57.conspart.tree
+  random seed: 1
+  tip-inner: ON
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: OFF
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alexey/hits/ngtest/data/dna57.phy
+[00:00:00] Loaded alignment with 57 taxa and 1601 sites
+
+WARNING: Fully undetermined sequences found: 1
+
+NOTE: Reduced alignment (with gap-only columns removed) was printed to:
+/home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 1418 patterns
+
+Partition 0: noname
+Model: GTR+FO+G4m
+Alignment sites / patterns: 1601 / 1418
+Gaps: 7.35 %
+Invariant sites: 2.69 %
+
+
+NOTE: Binary MSA file created: /home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test.raxml.rba
+
+[00:00:00] Loaded non-comprehensive constraint tree with 44 taxa
+[00:00:00] Generating 5 random starting tree(s) with 57 taxa
+[00:00:00] Data distribution: partitions/thread: 1-1, patterns/thread: 1418-1418
+
+Starting ML tree search with 5 distinct starting trees
+
+[00:00:50] ML tree search #1, logLikelihood: -57361.584462
+[00:01:53] ML tree search #2, logLikelihood: -56919.577685
+[00:02:47] ML tree search #3, logLikelihood: -56239.425038
+[00:03:26] ML tree search #4, logLikelihood: -57567.428139
+[00:04:14] ML tree search #5, logLikelihood: -57182.304210
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.443596 (ML),  weights&rates: (0.250000,0.023473) (0.250000,0.213509) (0.250000,0.774454) (0.250000,2.988563) 
+   Base frequencies (ML): 0.197744 0.309632 0.323410 0.169214 
+   Substitution rates (ML): 1.891329 2.879224 1.832106 1.025491 5.793132 1.000000 
+
+Final LogLikelihood: -56239.425038
+
+All ML trees saved to: /home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test.raxml.mlTrees
+Best ML tree saved to: /home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test.raxml.bestTree
+Optimized model saved to: /home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test.raxml.bestModel
+
+Execution log saved to: /home/alexey/hits/ngtest/out/0.6.0/search_DNA57_conspart/test.raxml.log
+
+Analysis started: 22-Oct-2018 16:32:41 / finished: 22-Oct-2018 16:36:55
+
+Elapsed time: 254.482 seconds
+
