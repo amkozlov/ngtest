@@ -1,0 +1,115 @@
+
+RAxML-NG v. 0.9.0coarse released on 28.07.2020 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 01-Aug-2020 17:46:57 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-coarse --all --msa /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test_parse.raxml.rba --prefix /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test --seed 1 --threads 1 --brlen linked --tree pars{5},rand{5} --bs-trees 20 --redo
+
+Analysis options:
+  run mode: ML tree search + bootstrapping (Felsenstein Bootstrap)
+  start tree(s): random (5) + parsimony (5)
+  bootstrap replicates: 20
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Loading binary alignment from file: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test_parse.raxml.rba
+[00:00:00] Alignment comprises 8 taxa, 3 partitions and 363 patterns
+
+Partition 0: p1
+Model: GTR+FO+I+G4m
+Alignment sites / patterns: 235 / 104
+Gaps: 2.39 %
+Invariant sites: 52.34 %
+
+Partition 1: p2
+Model: SYM+I+G4m
+Alignment sites / patterns: 235 / 51
+Gaps: 2.39 %
+Invariant sites: 77.87 %
+
+Partition 2: p3
+Model: GTR+FO+I+G4m
+Alignment sites / patterns: 235 / 208
+Gaps: 2.39 %
+Invariant sites: 7.23 %
+
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 5 random starting tree(s) with 8 taxa
+[00:00:00] Generating 5 parsimony starting tree(s) with 8 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 3 / 363 / 5808
+[00:00:00] Data distribution: max. searches per worker: 30
+
+Starting ML tree search with 10 distinct starting trees
+
+[00:00:01] ML tree search #1, logLikelihood: -3833.475701
+[00:00:02] ML tree search #2, logLikelihood: -3833.341378
+[00:00:03] ML tree search #3, logLikelihood: -3833.755430
+[00:00:04] ML tree search #4, logLikelihood: -3834.232076
+[00:00:06] ML tree search #5, logLikelihood: -3834.125461
+[00:00:07] ML tree search #6, logLikelihood: -3834.304751
+[00:00:08] ML tree search #7, logLikelihood: -3834.002120
+[00:00:10] ML tree search #8, logLikelihood: -3833.186425
+[00:00:11] ML tree search #9, logLikelihood: -3834.067068
+[00:00:13] ML tree search #10, logLikelihood: -3834.359229
+
+[00:00:13] ML tree search completed, best tree logLH: -3833.186425
+
+[00:00:13] Starting bootstrapping analysis with 20 replicates.
+
+[00:00:14] Bootstrap tree #1, logLikelihood: -3822.420291
+[00:00:15] Bootstrap tree #2, logLikelihood: -3736.046901
+[00:00:16] Bootstrap tree #3, logLikelihood: -3836.904255
+[00:00:17] Bootstrap tree #4, logLikelihood: -3773.702034
+[00:00:18] Bootstrap tree #5, logLikelihood: -3764.973094
+[00:00:19] Bootstrap tree #6, logLikelihood: -3789.075498
+[00:00:21] Bootstrap tree #7, logLikelihood: -3753.276082
+[00:00:22] Bootstrap tree #8, logLikelihood: -3713.094641
+[00:00:23] Bootstrap tree #9, logLikelihood: -3801.270174
+[00:00:24] Bootstrap tree #10, logLikelihood: -3734.838144
+[00:00:26] Bootstrap tree #11, logLikelihood: -3772.414024
+[00:00:27] Bootstrap tree #12, logLikelihood: -3711.984146
+[00:00:28] Bootstrap tree #13, logLikelihood: -3656.467860
+[00:00:30] Bootstrap tree #14, logLikelihood: -3783.230946
+[00:00:30] Bootstrap tree #15, logLikelihood: -3688.715684
+[00:00:31] Bootstrap tree #16, logLikelihood: -3884.749747
+[00:00:32] Bootstrap tree #17, logLikelihood: -3844.550371
+[00:00:33] Bootstrap tree #18, logLikelihood: -3642.065878
+[00:00:33] Bootstrap tree #19, logLikelihood: -3862.683812
+[00:00:34] Bootstrap tree #20, logLikelihood: -3716.065897
+
+
+Final LogLikelihood: -3833.186425
+
+AIC score: 7746.372850 / AICc score: 7751.312609 / BIC score: 7928.700763
+Free parameters (model + branch lengths): 40
+
+Best ML tree saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test.raxml.bestTree
+All ML trees saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test.raxml.mlTrees
+Best ML tree with Felsenstein bootstrap (FBP) support values saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test.raxml.support
+Optimized model saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test.raxml.bestModel
+Bootstrap trees saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test.raxml.bootstraps
+
+Execution log saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test.raxml.log
+
+Analysis started: 01-Aug-2020 17:46:57 / finished: 01-Aug-2020 17:47:31
+
+Elapsed time: 34.384 seconds
+
+Consumed energy: 0.224 Wh
+

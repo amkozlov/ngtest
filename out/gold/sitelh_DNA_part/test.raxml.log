@@ -1,0 +1,220 @@
+
+RAxML-NG v. 0.9.0coarse released on 01.08.2020 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 01-Aug-2020 19:15:30 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-coarse --sitelh --msa /home/alex/hits/ngtest/data/dna8.fa --model /home/alex/hits/ngtest/data/dna8.part2 --tree /home/alex/hits/ngtest/data/dna8.tree20 --brlen linked --prefix /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Per-site likelihood computation
+  start tree(s): user
+  random seed: 1
+  SIMD kernels: AVX2
+  parallelization: NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/dna8.fa
+[00:00:00] Loaded alignment with 8 taxa and 705 sites
+
+Alignment comprises 4 partitions and 372 patterns
+
+Partition 0: p4
+Model: JC
+Alignment sites / patterns: 105 / 72
+Gaps: 15.71 %
+Invariant sites: 42.86 %
+
+Partition 1: p1
+Model: JC
+Alignment sites / patterns: 200 / 85
+Gaps: 0.06 %
+Invariant sites: 52.00 %
+
+Partition 2: p2
+Model: JC
+Alignment sites / patterns: 200 / 33
+Gaps: 0.06 %
+Invariant sites: 80.50 %
+
+Partition 3: p3
+Model: JC
+Alignment sites / patterns: 200 / 182
+Gaps: 0.06 %
+Invariant sites: 6.50 %
+
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test.raxml.rba
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Loading user starting tree(s) from: /home/alex/hits/ngtest/data/dna8.tree20
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 4 / 372 / 1488
+[00:00:00] Data distribution: max. searches per worker: 20
+
+Starting ML tree search with 20 distinct starting trees
+
+[00:00:00] Tree #1, initial LogLikelihood: -4749.854962
+
+[00:00:00 -4749.854962] Initial branch length optimization
+[00:00:00 -4561.755508] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #1, final logLikelihood: -4561.509066
+
+[00:00:00] Tree #2, initial LogLikelihood: -4710.611234
+
+[00:00:00 -4710.611234] Initial branch length optimization
+[00:00:00 -4574.446008] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #2, final logLikelihood: -4574.430899
+
+[00:00:00] Tree #3, initial LogLikelihood: -4700.002489
+
+[00:00:00 -4700.002489] Initial branch length optimization
+[00:00:00 -4529.259869] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #3, final logLikelihood: -4529.178864
+
+[00:00:00] Tree #4, initial LogLikelihood: -4646.848782
+
+[00:00:00 -4646.848782] Initial branch length optimization
+[00:00:00 -4510.437669] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #4, final logLikelihood: -4510.384353
+
+[00:00:00] Tree #5, initial LogLikelihood: -4703.911075
+
+[00:00:00 -4703.911075] Initial branch length optimization
+[00:00:00 -4546.175973] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #5, final logLikelihood: -4545.941902
+
+[00:00:00] Tree #6, initial LogLikelihood: -4778.702287
+
+[00:00:00 -4778.702287] Initial branch length optimization
+[00:00:00 -4587.948855] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #6, final logLikelihood: -4587.578072
+
+[00:00:00] Tree #7, initial LogLikelihood: -4779.044635
+
+[00:00:00 -4779.044635] Initial branch length optimization
+[00:00:00 -4578.186389] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #7, final logLikelihood: -4578.116250
+
+[00:00:00] Tree #8, initial LogLikelihood: -4824.446733
+
+[00:00:00 -4824.446733] Initial branch length optimization
+[00:00:00 -4583.204665] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #8, final logLikelihood: -4583.136569
+
+[00:00:00] Tree #9, initial LogLikelihood: -4754.728771
+
+[00:00:00 -4754.728771] Initial branch length optimization
+[00:00:00 -4561.907362] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #9, final logLikelihood: -4561.662718
+
+[00:00:00] Tree #10, initial LogLikelihood: -4637.114529
+
+[00:00:00 -4637.114529] Initial branch length optimization
+[00:00:00 -4497.046314] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #10, final logLikelihood: -4497.015192
+
+[00:00:00] Tree #11, initial LogLikelihood: -4516.635375
+
+[00:00:00 -4516.635375] Initial branch length optimization
+[00:00:00 -4439.760557] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #11, final logLikelihood: -4439.738194
+
+[00:00:00] Tree #12, initial LogLikelihood: -4516.635375
+
+[00:00:00 -4516.635375] Initial branch length optimization
+[00:00:00 -4439.777636] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #12, final logLikelihood: -4439.738245
+
+[00:00:00] Tree #13, initial LogLikelihood: -4516.635375
+
+[00:00:00 -4516.635375] Initial branch length optimization
+[00:00:00 -4439.765894] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #13, final logLikelihood: -4439.738159
+
+[00:00:00] Tree #14, initial LogLikelihood: -4516.635375
+
+[00:00:00 -4516.635375] Initial branch length optimization
+[00:00:00 -4439.746533] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #14, final logLikelihood: -4439.738000
+
+[00:00:00] Tree #15, initial LogLikelihood: -4537.769432
+
+[00:00:00 -4537.769432] Initial branch length optimization
+[00:00:00 -4445.209991] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #15, final logLikelihood: -4445.154093
+
+[00:00:00] Tree #16, initial LogLikelihood: -4541.406729
+
+[00:00:00 -4541.406729] Initial branch length optimization
+[00:00:00 -4442.503958] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #16, final logLikelihood: -4442.474590
+
+[00:00:00] Tree #17, initial LogLikelihood: -4539.860564
+
+[00:00:00 -4539.860564] Initial branch length optimization
+[00:00:00 -4451.238731] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #17, final logLikelihood: -4451.225956
+
+[00:00:00] Tree #18, initial LogLikelihood: -4537.769432
+
+[00:00:00 -4537.769432] Initial branch length optimization
+[00:00:00 -4445.208027] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #18, final logLikelihood: -4445.153830
+
+[00:00:00] Tree #19, initial LogLikelihood: -4516.635375
+
+[00:00:00 -4516.635375] Initial branch length optimization
+[00:00:00 -4439.787294] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #19, final logLikelihood: -4439.741293
+
+[00:00:00] Tree #20, initial LogLikelihood: -4537.769432
+
+[00:00:00 -4537.769432] Initial branch length optimization
+[00:00:00 -4445.168497] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #20, final logLikelihood: -4445.153608
+
+
+
+Final LogLikelihood: -4439.738000
+
+AIC score: 8905.476000 / AICc score: 8906.002772 / BIC score: 8964.732571
+Free parameters (model + branch lengths): 13
+
+Best ML tree saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test.raxml.bestTree
+All ML trees saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test.raxml.mlTrees
+Optimized model saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test.raxml.bestModel
+Per-site LogLikelihoods saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test.raxml.siteLH
+
+Execution log saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/sitelh_DNA_part/test.raxml.log
+
+Analysis started: 01-Aug-2020 19:15:30 / finished: 01-Aug-2020 19:15:30
+
+Elapsed time: 0.159 seconds
+

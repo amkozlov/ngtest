@@ -28,6 +28,8 @@ def cmd_outfiles(command):
         files = ["log", "startTree"]
     elif command=="evaluate":
         files = ["log", "startTree", "bestTree", "bestModel"]
+    elif command=="sitelh":
+        files = ["log", "startTree", "bestTree", "bestModel", "siteLH"]
     elif command=="search":
         files = ["log", "startTree", "bestTree", "bestModel"]
     elif command=="all":
@@ -45,14 +47,14 @@ def cmd_outfiles(command):
 
     return files
 
-def check_files(command, prefix):
+def check_files(command, prefix, goldprefix):
     for f in cmd_outfiles(command):
         if not os.path.isfile(raxml_file(prefix, f)):
             return False
     
     return True
 
-def check_loglh(command, prefix):
+def check_loglh(command, prefix, goldprefix):
     return True
 
 def tree_comp(tree1_fname, tree2_fname):
@@ -73,11 +75,11 @@ def tree_comp(tree1_fname, tree2_fname):
 
     return dist_rf == 0
 
-def check_tree(command, prefix):
+def check_tree(command, prefix, goldprefix):
     for suffix in tree_files:
       if suffix in cmd_outfiles(command):
         tree1_fname=raxml_file(prefix, suffix)
-        tree2_fname=tree1_fname.replace(ver, "gold")
+        tree2_fname=raxml_file(goldprefix, suffix)
         if os.path.isfile(tree2_fname):
             if not tree_comp(tree1_fname, tree2_fname):
                 return False
@@ -86,28 +88,29 @@ def check_tree(command, prefix):
 
     return True
     
-def check(test_name, prefix):
+def check(test_name, prefix, goldprefix):
     command = test_name.split("_")[0]
-    if not check_files(command, prefix):
+    if not check_files(command, prefix, goldprefix):
         return False
-    if not check_loglh(command, prefix):
+    if not check_loglh(command, prefix, goldprefix):
         return False
-    if not check_tree(command, prefix):
+    if not check_tree(command, prefix, goldprefix):
         return False
     return True
 
 def raxng_ver(raxng):
     rxpipe = Popen([raxng, "-v"], stdout=PIPE)
-    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[[:alpha:]]*'
-    ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout)
+    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[\-][[:alpha:]]*'
+#    ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout)
 #    ver = check_output(raxng + " -v")
+    ver="1.0.1"
 
     return ver.strip()
 
 if __name__ == "__main__":
 
   if len(sys.argv) == 1:
-    print "Usage: runtest.py <raxml-ng-binary>" 
+    print "Usage: runtest.py <raxml-ng-binary> [testname | all] [threads/workers]" 
     sys.exit() 
 
   raxng=sys.argv[1]
@@ -122,9 +125,21 @@ if __name__ == "__main__":
       print "Failed to get RAxML-NG version!"
       sys.exit()
 
+  threads=1
+  workers=1
+
+  if len(sys.argv) > 3:
+    s = sys.argv[3].split("/")
+    threads=int(s[0])
+    if len(s) > 1:
+      workers=int(s[1])
+
+  par="T"+str(threads)+"W"+str(workers)
+
   rootdir=os.path.dirname(os.path.abspath(sys.argv[0]))
   datadir=os.path.join(rootdir, "data")
-  outdir=os.path.join(rootdir, "out", ver)
+  outdir=os.path.join(rootdir, "out", ver, par)
+  golddir=os.path.join(rootdir, "out", "gold")
   testdir=os.path.join(rootdir, "test")
   log_fname=os.path.join(rootdir, "-".join(["log_raxng",ver]))
   if os.path.isfile(log_fname):
@@ -133,7 +148,7 @@ if __name__ == "__main__":
   if not os.path.isdir(outdir):
       os.mkdir(outdir)
 
-  if len(sys.argv) > 2:
+  if len(sys.argv) > 2 and sys.argv[2] != "all":
       test_mask=os.path.join(testdir, sys.argv[2] + ".sh")
   else:
       test_mask=os.path.join(testdir, "*.sh")
@@ -149,7 +164,9 @@ if __name__ == "__main__":
 #      print test_script
       test_name=os.path.basename(test_script).replace(".sh", "")
       testoutdir=os.path.join(outdir, test_name)
+      testgolddir=os.path.join(golddir, test_name)
       prefix=os.path.join(testoutdir, "test")
+      goldprefix=os.path.join(testgolddir, "test")
    
 #      print test_name
 #      sys.stdout.write(test_name + "...")
@@ -161,7 +178,11 @@ if __name__ == "__main__":
       my_env["RAXNG"] = raxng
       my_env["DATADIR"] = datadir
       my_env["PREFIX"] = prefix
-      my_env["THREADS"] = "2"
+      my_env["THREADS"] = str(threads)
+      my_env["WORKERS"] = str(workers)
+      if workers > 1:
+        my_env["NGARGS"] = "--workers " + str(workers)
+
 #      my_env["NGARGS"] = "--tip-inner on"
       call_str = ["bash", test_script]
 #      print call_str
@@ -172,7 +193,7 @@ if __name__ == "__main__":
 
       total += 1
       sys.stdout.write(test_name + "...")
-      if retval == 0 and check(test_name, prefix):
+      if retval == 0 and check(test_name, prefix, goldprefix):
           print "OK"
       else:
           print "ERROR"
