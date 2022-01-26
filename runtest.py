@@ -100,10 +100,13 @@ def check(test_name, prefix, goldprefix):
 
 def raxng_ver(raxng):
     rxpipe = Popen([raxng, "-v"], stdout=PIPE)
-    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[\-][[:alpha:]]*'
-#    ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout)
+    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[\-]*[[:alpha:]]*'
+#    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+[\.]*[[:digit:]]*[\-]*[[:alpha:]]*'
+    ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout)
 #    ver = check_output(raxng + " -v")
-    ver="1.0.1"
+#    print ver
+#    sys.exit()
+#    ver="1.0.3-master"
 
     return ver.strip()
 
