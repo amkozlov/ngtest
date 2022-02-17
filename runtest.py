@@ -150,7 +150,7 @@ if __name__ == "__main__":
     os.remove(log_fname)
 
   if not os.path.isdir(outdir):
-      os.mkdir(outdir)
+      os.makedirs(outdir)
 
   if len(sys.argv) > 2 and sys.argv[2] != "all":
       test_mask=os.path.join(testdir, sys.argv[2] + ".sh")
