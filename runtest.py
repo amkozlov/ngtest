@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 import os
 import sys
@@ -71,7 +71,7 @@ def tree_comp(tree1_fname, tree2_fname):
     else:
       dist_bs = 0
 
-    print dist_rf, dist_bs
+    print(dist_rf, dist_bs)
 
     return dist_rf == 0
 
@@ -84,7 +84,7 @@ def check_tree(command, prefix, goldprefix):
             if not tree_comp(tree1_fname, tree2_fname):
                 return False
         else:
-           print "WARNING: ground truth not found: ", tree2_fname
+           print("WARNING: ground truth not found: ", tree2_fname)
 
     return True
     
@@ -102,7 +102,7 @@ def raxng_ver(raxng):
     rxpipe = Popen([raxng, "-v"], stdout=PIPE)
     pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[\-]*[[:alpha:]]*'
 #    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+[\.]*[[:digit:]]*[\-]*[[:alpha:]]*'
-    ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout)
+    ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout, universal_newlines=True)
 #    ver = check_output(raxng + " -v")
 #    print ver
 #    sys.exit()
@@ -113,19 +113,19 @@ def raxng_ver(raxng):
 if __name__ == "__main__":
 
   if len(sys.argv) == 1:
-    print "Usage: runtest.py <raxml-ng-binary> [testname | all] [threads/workers]" 
+    print("Usage: runtest.py <raxml-ng-binary> [testname | all] [threads/workers]") 
     sys.exit() 
 
   raxng=sys.argv[1]
 #  ver="0.7.0git"
 
   if (not os.path.isfile(raxng)):
-     print "File not found: ", raxng
+     print("File not found: ", raxng)
      sys.exit()
 
   ver = raxng_ver(raxng)
   if (not ver):
-      print "Failed to get RAxML-NG version!"
+      print("Failed to get RAxML-NG version!")
       sys.exit()
 
   threads=1
@@ -141,6 +141,7 @@ if __name__ == "__main__":
 
   rootdir=os.path.dirname(os.path.abspath(sys.argv[0]))
   datadir=os.path.join(rootdir, "data")
+  print(rootdir, "out", ver, par)
   outdir=os.path.join(rootdir, "out", ver, par)
   golddir=os.path.join(rootdir, "out", "gold")
   testdir=os.path.join(rootdir, "test")
@@ -158,7 +159,7 @@ if __name__ == "__main__":
 
   script_list = sorted(glob.glob(test_mask))
 
-  print "Testing RAxML-NG v.", ver, ", tests found: ", len(script_list)
+  print("Testing RAxML-NG v.", ver, ", tests found: ", len(script_list))
 
 #  print test_mask
   errors = 0
@@ -197,15 +198,15 @@ if __name__ == "__main__":
       total += 1
       sys.stdout.write(test_name + "...")
       if retval == 0 and check(test_name, prefix, goldprefix):
-          print "OK"
+          print("OK")
       else:
-          print "ERROR"
+          print("ERROR")
           errors += 1
 
   if errors > 0:
-      print "Tests failed: ", errors, " / ", total
+      print("Tests failed: ", errors, " / ", total)
   else:
-      print "All test completed successfully: ", total
+      print("All test completed successfully: ", total)
 
 # RAXNG=~/hits/raxml-ng/bin/raxml-ng-static DATADIR=~/hits/ngtest/data PREFIX=~/hits/ngtest/out/0.7.0/search_GTR_default/test
 
