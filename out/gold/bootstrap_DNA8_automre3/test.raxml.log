@@ -1,0 +1,62 @@
+
+RAxML-NG v. 1.0.1-master released on 27.01.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 28-Jan-2021 17:43:30 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-static --bootstrap --msa /home/alex/hits/ngtest/data/dna8.fa --model GTR --bs-trees autoMRE{3} --prefix /home/alex/hits/ngtest/out/1.0.1-master/T1W1/bootstrap_DNA8_automre3/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Bootstrapping
+  start tree(s): 
+  bootstrap replicates: max: 3 + bootstopping (autoMRE, cutoff: 0.030000)
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/dna8.fa
+[00:00:00] Loaded alignment with 8 taxa and 705 sites
+
+Alignment comprises 1 partitions and 332 patterns
+
+Partition 0: noname
+Model: GTR+FO
+Alignment sites / patterns: 705 / 332
+Gaps: 2.39 %
+Invariant sites: 45.82 %
+
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/1.0.1-master/T1W1/bootstrap_DNA8_automre3/test.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 332 / 1328
+[00:00:00] Data distribution: max. searches per worker: 3
+[00:00:00] Starting bootstrapping analysis with 3 replicates.
+
+[00:00:00] Bootstrap tree #1, logLikelihood: -4258.504196
+[00:00:00] Bootstrap tree #2, logLikelihood: -4170.524920
+[00:00:00] Bootstrap tree #3, logLikelihood: -4370.834852
+
+Bootstrap trees saved to: /home/alex/hits/ngtest/out/1.0.1-master/T1W1/bootstrap_DNA8_automre3/test.raxml.bootstraps
+
+Execution log saved to: /home/alex/hits/ngtest/out/1.0.1-master/T1W1/bootstrap_DNA8_automre3/test.raxml.log
+
+Analysis started: 28-Jan-2021 17:43:30 / finished: 28-Jan-2021 17:43:30
+
+Elapsed time: 0.206 seconds
+

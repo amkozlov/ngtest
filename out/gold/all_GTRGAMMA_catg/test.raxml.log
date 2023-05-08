@@ -1,25 +1,29 @@
 
-RAxML-NG v. 1.1.0-master released on 27.12.2021 by The Exelixis Lab.
+RAxML-NG v. 1.1.0-dev released on 06.05.2023 by The Exelixis Lab.
 Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
-Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
 Latest version: https://github.com/amkozlov/raxml-ng
 Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
 
 System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
 
-RAxML-NG was called at 27-Dec-2021 16:50:59 as follows:
+RAxML-NG was called at 06-May-2023 01:12:04 as follows:
 
-/home/alex/hits/raxml-ng/bin/raxml-ng-static --all --msa /home/alex/hits/ngtest/data/dna8.catg --model GTR+G --prefix /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test --seed 1 --threads 1 --tree pars{5},rand{5} --bs-trees 20 --redo
+/home/alex/hits/raxml-ng/bin/raxml-ng-static --all --msa /home/alex/hits/ngtest/data/dna8.catg --model GTR+G --prefix /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test --seed 1 --threads 1 --tree pars{5},rand{5} --bs-trees 20 --redo
 
 Analysis options:
   run mode: ML tree search + bootstrapping (Felsenstein Bootstrap)
   start tree(s): random (5) + parsimony (5)
-  bootstrap replicates: 20
+  bootstrap replicates: parsimony (20)
   random seed: 1
   tip-inner: OFF
   pattern compression: ON
   per-rate scalers: OFF
   site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
   branch lengths: proportional (ML estimate, algorithm: NR-FAST)
   SIMD kernels: AVX2
   parallelization: coarse-grained (auto), NONE/sequential
@@ -40,73 +44,73 @@ Invariant sites: 0.00 %
 
 Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
 
-Parallel reduction/worker buffer size: 1 KB  / 0 KB
-
 [00:00:00] Generating 5 random starting tree(s) with 8 taxa
 [00:00:00] Generating 5 parsimony starting tree(s) with 8 taxa
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
 [00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 400 / 6400
 [00:00:00] Data distribution: max. searches per worker: 30
 
 Starting ML tree search with 10 distinct starting trees
 
-[00:00:00] ML tree search #1, logLikelihood: -4394.128709
-[00:00:00] ML tree search #2, logLikelihood: -4401.313942
-[00:00:00] ML tree search #3, logLikelihood: -4394.156245
-[00:00:00] ML tree search #4, logLikelihood: -4403.973060
-[00:00:01] ML tree search #5, logLikelihood: -4398.820719
-[00:00:01] ML tree search #6, logLikelihood: -4401.392277
-[00:00:01] ML tree search #7, logLikelihood: -4405.060477
-[00:00:01] ML tree search #8, logLikelihood: -4393.443558
-[00:00:02] ML tree search #9, logLikelihood: -4393.623203
-[00:00:02] ML tree search #10, logLikelihood: -4393.179523
+[00:00:00] ML tree search #1, logLikelihood: -4394.177648
+[00:00:00] ML tree search #2, logLikelihood: -4401.314352
+[00:00:00] ML tree search #3, logLikelihood: -4394.070298
+[00:00:00] ML tree search #4, logLikelihood: -4403.973491
+[00:00:00] ML tree search #5, logLikelihood: -4398.801094
+[00:00:00] ML tree search #6, logLikelihood: -4401.412272
+[00:00:01] ML tree search #7, logLikelihood: -4401.366572
+[00:00:01] ML tree search #8, logLikelihood: -4393.456358
+[00:00:01] ML tree search #9, logLikelihood: -4393.660415
+[00:00:01] ML tree search #10, logLikelihood: -4393.173326
 
-[00:00:02] ML tree search completed, best tree logLH: -4393.179523
+[00:00:01] ML tree search completed, best tree logLH: -4393.173326
 
-[00:00:02] Starting bootstrapping analysis with 20 replicates.
+[00:00:01] Starting bootstrapping analysis with 20 replicates.
 
-[00:00:02] Bootstrap tree #1, logLikelihood: -4388.963090
-[00:00:02] Bootstrap tree #2, logLikelihood: -4389.949956
-[00:00:03] Bootstrap tree #3, logLikelihood: -4382.294569
-[00:00:03] Bootstrap tree #4, logLikelihood: -4380.942846
-[00:00:03] Bootstrap tree #5, logLikelihood: -4383.718720
-[00:00:03] Bootstrap tree #6, logLikelihood: -4391.352865
-[00:00:03] Bootstrap tree #7, logLikelihood: -4373.427020
-[00:00:03] Bootstrap tree #8, logLikelihood: -4391.049257
-[00:00:04] Bootstrap tree #9, logLikelihood: -4390.129229
-[00:00:04] Bootstrap tree #10, logLikelihood: -4382.901917
-[00:00:04] Bootstrap tree #11, logLikelihood: -4388.009680
-[00:00:04] Bootstrap tree #12, logLikelihood: -4395.117495
-[00:00:04] Bootstrap tree #13, logLikelihood: -4379.670116
-[00:00:04] Bootstrap tree #14, logLikelihood: -4392.306283
-[00:00:05] Bootstrap tree #15, logLikelihood: -4404.933843
-[00:00:05] Bootstrap tree #16, logLikelihood: -4384.209542
-[00:00:05] Bootstrap tree #17, logLikelihood: -4378.404980
-[00:00:05] Bootstrap tree #18, logLikelihood: -4372.595226
-[00:00:05] Bootstrap tree #19, logLikelihood: -4389.685118
-[00:00:05] Bootstrap tree #20, logLikelihood: -4395.518005
+[00:00:01] Bootstrap tree #1, logLikelihood: -4389.745883
+[00:00:01] Bootstrap tree #2, logLikelihood: -4391.553066
+[00:00:01] Bootstrap tree #3, logLikelihood: -4382.432413
+[00:00:01] Bootstrap tree #4, logLikelihood: -4380.019724
+[00:00:01] Bootstrap tree #5, logLikelihood: -4385.954554
+[00:00:02] Bootstrap tree #6, logLikelihood: -4391.872106
+[00:00:02] Bootstrap tree #7, logLikelihood: -4376.955754
+[00:00:02] Bootstrap tree #8, logLikelihood: -4397.107423
+[00:00:02] Bootstrap tree #9, logLikelihood: -4403.874201
+[00:00:02] Bootstrap tree #10, logLikelihood: -4385.911696
+[00:00:02] Bootstrap tree #11, logLikelihood: -4388.149642
+[00:00:02] Bootstrap tree #12, logLikelihood: -4394.160274
+[00:00:02] Bootstrap tree #13, logLikelihood: -4374.763433
+[00:00:02] Bootstrap tree #14, logLikelihood: -4387.844119
+[00:00:02] Bootstrap tree #15, logLikelihood: -4387.460140
+[00:00:03] Bootstrap tree #16, logLikelihood: -4384.500950
+[00:00:03] Bootstrap tree #17, logLikelihood: -4377.860424
+[00:00:03] Bootstrap tree #18, logLikelihood: -4383.191749
+[00:00:03] Bootstrap tree #19, logLikelihood: -4389.616784
+[00:00:03] Bootstrap tree #20, logLikelihood: -4392.154409
 
 Optimized model parameters:
 
    Partition 0: noname
    Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 99.862289 (ML),  weights&rates: (0.250000,0.875822) (0.250000,0.964713) (0.250000,1.029567) (0.250000,1.129897) 
-   Base frequencies (ML): 0.324048 0.328581 0.112091 0.235280 
-   Substitution rates (ML): 0.001000 739.821534 0.001000 11.811436 126.820249 1.000000 
+   Base frequencies (ML): 0.323958 0.328693 0.112120 0.235229 
+   Substitution rates (ML): 0.001000 739.360045 0.001000 11.303616 122.629522 1.000000 
 
 
-Final LogLikelihood: -4393.179523
+Final LogLikelihood: -4393.173326
 
-AIC score: 8830.359046 / AICc score: 8833.043396 / BIC score: 8918.171266
+AIC score: 8830.346651 / AICc score: 8833.031002 / BIC score: 8918.158871
 Free parameters (model + branch lengths): 22
 
-Best ML tree saved to: /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test.raxml.bestTree
-All ML trees saved to: /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test.raxml.mlTrees
-Best ML tree with Felsenstein bootstrap (FBP) support values saved to: /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test.raxml.support
-Optimized model saved to: /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test.raxml.bestModel
-Bootstrap trees saved to: /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test.raxml.bootstraps
+Best ML tree saved to: /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test.raxml.bestTree
+All ML trees saved to: /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test.raxml.mlTrees
+Best ML tree with Felsenstein bootstrap (FBP) support values saved to: /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test.raxml.support
+Optimized model saved to: /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test.raxml.bestModel
+Bootstrap trees saved to: /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test.raxml.bootstraps
 
-Execution log saved to: /home/alex/hits/ngtest/out/1.1.0-master/T1W1/all_GTRGAMMA_catg/test.raxml.log
+Execution log saved to: /home/alex/hits/ngtest/out/1.1.0-dev/T1W1/all_GTRGAMMA_catg/test.raxml.log
 
-Analysis started: 27-Dec-2021 16:50:59 / finished: 27-Dec-2021 16:51:05
+Analysis started: 06-May-2023 01:12:04 / finished: 06-May-2023 01:12:07
 
-Elapsed time: 5.841 seconds
+Elapsed time: 3.425 seconds
 
