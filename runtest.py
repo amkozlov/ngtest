@@ -15,6 +15,8 @@ ver=""
 tree_files = ["bestTree", "support", "consensusTreeSTRICT", "consensusTreeMR", 
               "consensusTreeMR80", "consensusTreeMRE"]
 
+loglh_commands = ["evaluate", "sitelh", "search", "all"]
+
 def raxml_file(prefix, suffix):
     return ".".join([prefix, "raxml", suffix])
 
@@ -47,6 +49,21 @@ def cmd_outfiles(command):
 
     return files
 
+def parse_logfile(fname):
+    if not os.path.isfile(fname):
+      return None
+    d = {}
+    max_tokens = 2
+    with open(fname, "r") as f:
+      for line in f:
+        if 'Final LogLikelihood:' in line:
+          d["likelihood"] = float(line.split()[2])
+        if 'Elapsed time:' in line:
+          d["time"] = float(line.split()[2])
+        if len(d) >= max_tokens:
+           break
+    return d 
+
 def check_files(command, prefix, goldprefix):
     for f in cmd_outfiles(command):
         if not os.path.isfile(raxml_file(prefix, f)):
@@ -55,7 +72,18 @@ def check_files(command, prefix, goldprefix):
     return True
 
 def check_loglh(command, prefix, goldprefix):
-    return True
+    suffix = "log"
+    log1_fname = raxml_file(prefix, suffix)
+    log2_fname = raxml_file(goldprefix, suffix)
+    d1 = parse_logfile(log1_fname)
+    d2 = parse_logfile(log2_fname)
+#    print(d1,d2)
+    lh_eps = 0.1
+    if abs(d1["likelihood"] - d2["likelihood"]) < lh_eps:
+      return True
+    else:
+      print(d1["likelihood"], d2["likelihood"])
+      return False
 
 def tree_comp(tree1_fname, tree2_fname):
     tree_list = dendropy.TreeList()
@@ -92,8 +120,9 @@ def check(test_name, prefix, goldprefix):
     command = test_name.split("_")[0]
     if not check_files(command, prefix, goldprefix):
         return False
-    if not check_loglh(command, prefix, goldprefix):
-        return False
+    if command in loglh_commands: 
+      if not check_loglh(command, prefix, goldprefix):
+          return False
     if not check_tree(command, prefix, goldprefix):
         return False
     return True
