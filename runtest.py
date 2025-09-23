@@ -12,15 +12,15 @@ from dendropy.calculate import treecompare
 
 ver=""
 
-tree_files = ["bestTree", "support", "consensusTreeSTRICT", "consensusTreeMR", 
-              "consensusTreeMR80", "consensusTreeMRE"]
+tree_files = ["bestTree", "support", "supportTBE", "supportFBP", "supportSH", "supportRBS", "supportEBG", "supportPS", "supportPBS", 
+              "consensusTreeSTRICT", "consensusTreeMR", "consensusTreeMR80", "consensusTreeMRE"]
 
 loglh_commands = ["evaluate", "sitelh", "search", "all"]
 
 def raxml_file(prefix, suffix):
     return ".".join([prefix, "raxml", suffix])
 
-def cmd_outfiles(command):
+def cmd_outfiles(command, opts={}):
     files = []
     if command=="check":
         files = ["log"]
@@ -35,17 +35,27 @@ def cmd_outfiles(command):
     elif command=="search":
         files = ["log", "startTree", "bestTree", "bestModel"]
     elif command=="all":
-        files = ["log", "startTree", "mlTrees", "bestTree", "bestModel", "bootstraps", "support"]
+        files = ["log", "startTree", "mlTrees", "bestTree", "bestModel", "bootstraps"]
     elif command=="bootstrap":
         files = ["log", "bootstraps"]
     elif command=="support":
-        files = ["log", "support"]
+        files = ["log"]
     elif command=="bsconverge":
         files = ["log"]
     elif command=="consense":
         files = ["log", "consensusTreeSTRICT", "consensusTreeMR", "consensusTreeMR80", "consensusTreeMRE"]
     elif command=="terrace":
         files = ["log"]
+    elif command=="ebg":
+        files = ["log", "startTree", "bestTree", "bestModel", "supportEBG"]
+
+    if (command=="all" or command=="support") and "bs-metric" in opts:
+      metrics = opts["bs-metric"].split("+")
+      if len(metrics) < 2 and metrics[0] == "FBP":
+        files.append("support")
+      else:
+        for m in metrics:
+          files.append(f"support{m}")
 
     return files
 
@@ -64,8 +74,8 @@ def parse_logfile(fname):
            break
     return d 
 
-def check_files(command, prefix, goldprefix):
-    for f in cmd_outfiles(command):
+def check_files(command, prefix, goldprefix, opts={}):
+    for f in cmd_outfiles(command, opts):
         if not os.path.isfile(raxml_file(prefix, f)):
             return False
     
@@ -82,7 +92,7 @@ def check_loglh(command, prefix, goldprefix):
     if abs(d1["likelihood"] - d2["likelihood"]) < lh_eps:
       return True
     else:
-      print(d1["likelihood"], d2["likelihood"])
+      print(d1["likelihood"], " <-- ", d2["likelihood"])
       return False
 
 def tree_comp(tree1_fname, tree2_fname):
@@ -117,25 +127,31 @@ def check_tree(command, prefix, goldprefix):
     return True
     
 def check(test_name, prefix, goldprefix):
-    command = test_name.split("_")[0]
-    if not check_files(command, prefix, goldprefix):
+    passed = True
+    test_toks = test_name.split("_")
+    command = test_toks[0]
+    opts = {}
+    if command == "support" and len(test_toks) > 2:  
+      opts["bs-metric"] = test_toks[2].upper()
+
+    if not check_files(command, prefix, goldprefix, opts):
         return False
+    if not check_tree(command, prefix, goldprefix):
+        passed = False
     if command in loglh_commands: 
       if not check_loglh(command, prefix, goldprefix):
-          return False
-    if not check_tree(command, prefix, goldprefix):
-        return False
-    return True
+          passed = False
+    return passed
 
 def raxng_ver(raxng):
     rxpipe = Popen([raxng, "-v"], stdout=PIPE)
-    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[\-]*[[:alpha:]]*'
+    pat = r'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+[\-]*[[:alpha:]]*'
 #    pat = 'RAxML-NG v. \K[[:digit:]]+\.[[:digit:]]+[\.]*[[:digit:]]*[\-]*[[:alpha:]]*'
     ver = check_output(["grep", "-oP", pat], stdin=rxpipe.stdout, universal_newlines=True)
 #    ver = check_output(raxng + " -v")
 #    print ver
 #    sys.exit()
-#    ver="1.0.3-master"
+#    ver="2.0-beta2"
 
     return ver.strip()
 

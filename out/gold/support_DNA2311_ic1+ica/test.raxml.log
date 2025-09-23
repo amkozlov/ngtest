@@ -1,0 +1,43 @@
+
+RAxML-NG v. 2.0.0-adaptive released on 17.05.2025 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 19-May-2025 18:08:34 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-adaptive --support --tree cons:MR --bs-trees /home/alex/hits/ngtest/data/dna2311.bsrep --bs-metric ic1,ica --prefix /home/alex/hits/ngtest/out/2.0.0-adaptive/T1W1/support_DNA2311_ic1+ica/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Compute bipartition support (Internode Certainty + Internode Certainty All)
+  start tree(s): consensus (cutoff: 50%)
+  random seed: 1
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+Reading bootstrap trees from file: /home/alex/hits/ngtest/data/dna2311.bsrep
+Loaded 300 trees with 2311 taxa.
+
+
+Absolute tree certainty (TC) for this tree: 901.815483
+Relative tree certainty (TC) for this tree: 0.390735
+
+Best ML tree with Internode certainty (IC) support values saved to: /home/alex/hits/ngtest/out/2.0.0-adaptive/T1W1/support_DNA2311_ic1+ica/test.raxml.supportIC1
+
+Absolute tree certainty incl. all conflicting splits (TCA) for this tree: 906.501997
+Relative tree certainty incl. all conflicting splits (TCA) for this tree: 0.392765
+
+Best ML tree with Internode certainty All (ICA) support values saved to: /home/alex/hits/ngtest/out/2.0.0-adaptive/T1W1/support_DNA2311_ic1+ica/test.raxml.supportICA
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-adaptive/T1W1/support_DNA2311_ic1+ica/test.raxml.log
+
+Analysis started: 19-May-2025 18:08:34 / finished: 19-May-2025 18:08:40
+
+Elapsed time: 6.446 seconds
+

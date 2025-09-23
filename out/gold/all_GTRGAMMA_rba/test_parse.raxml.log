@@ -1,15 +1,15 @@
 
-RAxML-NG v. 0.9.0coarse released on 28.07.2020 by The Exelixis Lab.
+RAxML-NG v. 2.0.0-dev released on 24.10.2024 by The Exelixis Lab.
 Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
-Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
 Latest version: https://github.com/amkozlov/raxml-ng
 Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
 
 System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
 
-RAxML-NG was called at 01-Aug-2020 17:46:57 as follows:
+RAxML-NG was called at 24-Oct-2024 13:47:33 as follows:
 
-/home/alex/hits/raxml-ng/bin/raxml-ng-coarse --parse --msa /home/alex/hits/ngtest/data/dna8.fa --model /home/alex/hits/ngtest/data/dna8.part --prefix /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test_parse --seed 1 --threads 1 --redo --brlen linked
+/home/alex/hits/raxml-ng/bin/raxml-ng-static --parse --msa /home/alex/hits/ngtest/data/dna8.fa --model /home/alex/hits/ngtest/data/dna8.part --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/all_GTRGAMMA_rba/test_parse --seed 1 --threads 1 --redo --brlen linked
 
 Analysis options:
   run mode: Alignment parsing and compression
@@ -19,9 +19,10 @@ Analysis options:
   pattern compression: ON
   per-rate scalers: OFF
   site repeats: ON
+  logLH epsilon: general: 0.100000, brlen-triplet: 1000.000000
   branch lengths: linked (ML estimate, algorithm: NR-FAST)
   SIMD kernels: AVX2
-  parallelization: NONE/sequential
+  parallelization: coarse-grained (auto), NONE/sequential
 
 WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
 
@@ -49,7 +50,12 @@ Gaps: 2.39 %
 Invariant sites: 7.23 %
 
 
-NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test_parse.raxml.rba
+[00:00:00] Adaptive mode: Predicting difficulty of the MSA ...
+[00:00:00] Parallel parsimony: 100 trees with 1 threads
+[00:00:00] Predicted difficulty: 0.08
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/all_GTRGAMMA_rba/test_parse.raxml.rba
+
 
 * Estimated memory requirements                : 1 MB
 
@@ -61,9 +67,9 @@ Actual memory consumption and parallel performance on your system may differ!
 Alignment can be successfully read by RAxML-NG.
 
 
-Execution log saved to: /home/alex/hits/ngtest/out/0.9.0coarse/T1W1/all_GTRGAMMA_rba/test_parse.raxml.log
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/all_GTRGAMMA_rba/test_parse.raxml.log
 
-Analysis started: 01-Aug-2020 17:46:57 / finished: 01-Aug-2020 17:46:57
+Analysis started: 24-Oct-2024 13:47:33 / finished: 24-Oct-2024 13:47:33
 
-Elapsed time: 0.005 seconds
+Elapsed time: 0.036 seconds
 

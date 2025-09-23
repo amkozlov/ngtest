@@ -1,0 +1,4 @@
+LG+G, p1 = 1-20, 81-113
+#WAG+G, EXCLUDE = 21-50
+JTT, p3 = 51-70
+#LG, EXCLUDE = 71-80

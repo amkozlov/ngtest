@@ -1,0 +1,99 @@
+
+RAxML-NG v. 2.0.0-dev released on 29.08.2025 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 29-Aug-2025 17:21:09 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --search1 --msa /home/alex/hits/ngtest/data/prot21.fa --model /home/alex/hits/ngtest/data/prot21.excl.part --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROT_part_exclude/test --seed 1 --threads 1 --redo --force msa_extra_cols
+
+Analysis options:
+  run mode: ML tree search (adaptive)
+  start tree(s): parsimony (1)
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  stopping rule: OFF
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+WARNING: Running in FORCE mode: some safety checks are disabled!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/prot21.fa
+[00:00:00] Loaded alignment with 21 taxa and 113 sites
+
+WARNING: Found 40 alignment site(s) which are not assigned to any partition. They will be ignored.
+
+Alignment comprises 2 partitions and 73 patterns
+
+Partition 0: p1
+Model: LG+G4m+B
+Alignment sites / patterns: 53 / 53
+Gaps: 13.93 %
+Invariant sites: 13.21 %
+
+Partition 1: p3
+Model: JTT+B
+Alignment sites / patterns: 20 / 20
+Gaps: 1.90 %
+Invariant sites: 15.00 %
+
+
+[00:00:00] Adaptive mode: Predicting difficulty of the MSA ...
+[00:00:00] Parallel parsimony: 24 trees with 1 threads
+[00:00:00] Predicted difficulty: 0.29
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROT_part_exclude/test.raxml.rba
+
+[00:00:00] Generating 1 parsimony starting tree(s) with 21 taxa
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 2 / 73 / 4640
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -2116.261294] Heuristic: adaptive, stopping rules: off, epsilon = 10.000000
+[00:00:00 -2116.261294] Initial branch length optimization
+[00:00:00 -1986.037600] Model parameter optimization (eps = 10.000000)
+[00:00:00 -1983.157993] FAST spr round 1 (radius: 18)
+[00:00:00 -1966.948378] FAST spr round 2 (radius: 18)
+[00:00:00 -1962.321617] Model parameter optimization (eps = 3.000000)
+[00:00:00 -1962.289724] SLOW spr round 1 (radius: 7)
+[00:00:00 -1961.856831] SLOW spr round 2 (radius: 14)
+[00:00:00 -1961.855508] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -1961.853989
+
+
+
+Final LogLikelihood: -1961.853989
+
+AIC score: 4005.707979 / AICc score: 4116.804753 / BIC score: 4099.616816
+Free parameters (model + branch lengths): 41
+
+Best ML tree saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROT_part_exclude/test.raxml.bestTree
+Optimized model saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROT_part_exclude/test.raxml.bestModel
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROT_part_exclude/test.raxml.log
+
+Analysis started: 29-Aug-2025 17:21:09 / finished: 29-Aug-2025 17:21:09
+
+Elapsed time: 0.596 seconds
+
