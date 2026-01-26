@@ -13,9 +13,11 @@ from dendropy.calculate import treecompare
 ver=""
 
 tree_files = ["bestTree", "support", "supportTBE", "supportFBP", "supportSH", "supportRBS", "supportEBG", "supportPS", "supportPBS", 
-              "consensusTreeSTRICT", "consensusTreeMR", "consensusTreeMR80", "consensusTreeMRE"]
+              "consensusTreeSTRICT", "consensusTreeMR", "consensusTreeMR80", "consensusTreeMRE", "ancestralTree", "mutationMapTree"]
 
-loglh_commands = ["evaluate", "sitelh", "search", "all"]
+tsv_files = ["mutationMapList", "ancestralStates"]
+
+loglh_commands = ["evaluate", "sitelh", "search", "all", "fast" ]
 
 def raxml_file(prefix, suffix):
     return ".".join([prefix, "raxml", suffix])
@@ -48,6 +50,13 @@ def cmd_outfiles(command, opts={}):
         files = ["log"]
     elif command=="ebg":
         files = ["log", "startTree", "bestTree", "bestModel", "supportEBG"]
+    elif command=="moose":
+        files = ["log", "startTree", "moose.bestModel", "moose.xml"]
+    elif command=="ancestral":
+        files = ["log", "ancestralTree", "ancestralStates", "ancestralProbs"]
+    elif command=="mutmap":
+        files = ["log", "mutationMapTree", "mutationMapList"]
+
 
     if (command=="all" or command=="support") and "bs-metric" in opts:
       metrics = opts["bs-metric"].split("+")
@@ -59,19 +68,27 @@ def cmd_outfiles(command, opts={}):
 
     return files
 
+def test_must_fail(test_name):
+  test_toks = test_name.split("_")
+  return len(test_toks) > 2 and test_toks[2].startswith("BAD")
+
 def parse_logfile(fname):
     if not os.path.isfile(fname):
       return None
     d = {}
-    max_tokens = 2
+    d["errors"] = set([])
+#    max_tokens = 2
     with open(fname, "r") as f:
       for line in f:
-        if 'Final LogLikelihood:' in line:
+        if line.startswith("ERROR:"):
+          errmsg = line[7:]
+          d["errors"].add(errmsg)
+        elif 'Final LogLikelihood:' in line:
           d["likelihood"] = float(line.split()[2])
-        if 'Elapsed time:' in line:
+        elif 'Elapsed time:' in line:
           d["time"] = float(line.split()[2])
-        if len(d) >= max_tokens:
-           break
+#        if len(d) >= max_tokens:
+#           break
     return d 
 
 def check_files(command, prefix, goldprefix, opts={}):
@@ -81,12 +98,7 @@ def check_files(command, prefix, goldprefix, opts={}):
     
     return True
 
-def check_loglh(command, prefix, goldprefix):
-    suffix = "log"
-    log1_fname = raxml_file(prefix, suffix)
-    log2_fname = raxml_file(goldprefix, suffix)
-    d1 = parse_logfile(log1_fname)
-    d2 = parse_logfile(log2_fname)
+def check_loglh(command, d1, d2):
 #    print(d1,d2)
     lh_eps = 0.1
     if abs(d1["likelihood"] - d2["likelihood"]) < lh_eps:
@@ -113,6 +125,12 @@ def tree_comp(tree1_fname, tree2_fname):
 
     return dist_rf == 0
 
+def diff_comp(fname1, fname2):
+  call_str = ["diff", fname1, fname2]
+  retval = call(call_str)
+  return True if retval == 0 else False
+  
+
 def check_tree(command, prefix, goldprefix):
     for suffix in tree_files:
       if suffix in cmd_outfiles(command):
@@ -125,6 +143,19 @@ def check_tree(command, prefix, goldprefix):
            print("WARNING: ground truth not found: ", tree2_fname)
 
     return True
+
+def check_tsv(command, prefix, goldprefix):
+    for suffix in tsv_files:
+      if suffix in cmd_outfiles(command):
+        tsv1_fname=raxml_file(prefix, suffix)
+        tsv2_fname=raxml_file(goldprefix, suffix)
+        if os.path.isfile(tsv2_fname):
+            if not diff_comp(tsv1_fname, tsv2_fname):
+                return False
+        else:
+           print("WARNING: ground truth not found: ", tsv2_fname)
+
+    return True
     
 def check(test_name, prefix, goldprefix):
     passed = True
@@ -134,12 +165,27 @@ def check(test_name, prefix, goldprefix):
     if command == "support" and len(test_toks) > 2:  
       opts["bs-metric"] = test_toks[2].upper()
 
+    suffix = "log"
+    log_fname = raxml_file(prefix, suffix)
+    gold_log_fname = raxml_file(goldprefix, suffix)
+    log_attrs = parse_logfile(log_fname)
+    gold_log_attrs = parse_logfile(gold_log_fname)
+
+    if test_must_fail(test_name):
+      if log_attrs["errors"] != gold_log_attrs["errors"]:
+        print(log_attrs, "\n", gold_log_attrs)
+        return False
+    elif log_attrs and len(log_attrs["errors"]) > 0:
+      return False
+
     if not check_files(command, prefix, goldprefix, opts):
         return False
     if not check_tree(command, prefix, goldprefix):
         passed = False
+    if not check_tsv(command, prefix, goldprefix):
+        passed = False
     if command in loglh_commands: 
-      if not check_loglh(command, prefix, goldprefix):
+      if not check_loglh(command, log_attrs, gold_log_attrs):
           passed = False
     return passed
 
@@ -215,7 +261,7 @@ if __name__ == "__main__":
       testoutdir=os.path.join(outdir, test_name)
       testgolddir=os.path.join(golddir, test_name)
       prefix=os.path.join(testoutdir, "test")
-      goldprefix=os.path.join(testgolddir, "test")
+      goldprefix=os.path.join(testgolddir, "test")   
    
 #      print test_name
 #      sys.stdout.write(test_name + "...")
@@ -242,16 +288,19 @@ if __name__ == "__main__":
 
       total += 1
       sys.stdout.write(test_name + "...")
-      if retval == 0 and check(test_name, prefix, goldprefix):
+      expected_retval = 1 if test_must_fail(test_name) else 0
+#      print(retval)
+      if retval == expected_retval and check(test_name, prefix, goldprefix):
           print("OK")
       else:
           print("ERROR")
           errors += 1
 
+  print("")
   if errors > 0:
-      print("Tests failed: ", errors, " / ", total)
+      print(" 🔴  Tests failed: ", errors, " / ", total)
   else:
-      print("All test completed successfully: ", total)
+      print(" 🟢  All test completed successfully: ", total)
 
 # RAXNG=~/hits/raxml-ng/bin/raxml-ng-static DATADIR=~/hits/ngtest/data PREFIX=~/hits/ngtest/out/0.7.0/search_GTR_default/test
 

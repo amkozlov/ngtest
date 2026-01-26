@@ -1,0 +1,119 @@
+
+RAxML-NG v. 2.0.0-dev released on 30.10.2025 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 30-Oct-2025 15:31:10 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --moose --msa /home/alex/hits/ngtest/data/dna8.fa --data-type DNA --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/moose_DNA8_default/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Model selection
+  start tree(s): parsimony (1)
+  random seed: 1
+  FreeRate optimization method: AUTO
+  model selection information criterion: BIC
+  model selection heuristics: RHAS(ic-delta=10.000000, mode=all significant) FreeRate 
+  model selection RHAS: R I+R E I G I+G  (FreeRate categories: 2-10)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/dna8.fa
+[00:00:00] Loaded alignment with 8 taxa and 705 sites
+
+Alignment comprises 1 partitions and 332 patterns
+
+Partition 0: noname
+Model: GTR+FO+G4m
+Alignment sites / patterns: 705 / 332
+Gaps: 2.39 %
+Invariant sites: 45.82 %
+
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/moose_DNA8_default/test.raxml.rba
+
+[00:00:00] Generating 1 parsimony starting tree(s) with 8 taxa
+[00:00:00] Parallel parsimony: 1 trees with 1 threads
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+
+Starting model selection with parsimony starting tree using 1 threads
+
+[00:00:00] Evaluated model (  1/484) GTR+FO+R2     BIC = 8301.711567
+[00:00:00] Evaluated model (  2/484) GTR+FO+R3     BIC = 8311.864278
+[00:00:00] Evaluated model (  3/483) GTR+FO+I+R2   BIC = 8300.238475
+[00:00:00] Evaluated model (  4/483) GTR+FO+I+R3   BIC = 8300.017843
+[00:00:00] Evaluated model (  5/483) GTR+FO+I+R4   BIC = 8303.366018
+[00:00:00] Evaluated model (  6/483) GTR+FO        BIC = 8697.907483
+[00:00:00] Evaluated model (  7/483) GTR+FO+I      BIC = 8334.405142
+[00:00:00] Evaluated model (  8/483) GTR+FO+G4     BIC = 8282.694555
+[00:00:00] Evaluated model (  9/483) GTR+FO+I+G4   BIC = 8284.392435
+[00:00:00] Evaluated model ( 10/463) GTR+FE+G4     BIC = 8361.204123
+[00:00:00] Evaluated model ( 11/463) GTR+FE+I+G4   BIC = 8361.626790
+[00:00:00] Evaluated model ( 12/455) F81+FO+G4     BIC = 8482.296317
+[00:00:00] Evaluated model ( 13/455) F81+FO+I+G4   BIC = 8484.956413
+[00:00:00] Evaluated model ( 14/447) F81+FE+G4     BIC = 8632.191543
+[00:00:00] Evaluated model ( 15/447) F81+FE+I+G4   BIC = 8632.895433
+[00:00:00] Evaluated model ( 16/439) HKY+FO+G4     BIC = 8262.908811
+[00:00:00] Evaluated model ( 17/439) HKY+FO+I+G4   BIC = 8268.956247
+[00:00:00] Evaluated model ( 18/431) HKY+FE+G4     BIC = 8502.624149
+[00:00:00] Evaluated model ( 19/431) HKY+FE+I+G4   BIC = 8505.205029
+[00:00:00] Evaluated model ( 20/423) TN93+FO+G4    BIC = 8261.121780
+[00:00:00] Evaluated model ( 21/423) TN93+FO+I+G4  BIC = 8266.332736
+[00:00:00] Evaluated model ( 22/415) TN93+FE+G4    BIC = 8432.578962
+[00:00:00] Evaluated model ( 23/415) TN93+FE+I+G4  BIC = 8434.173111
+[00:00:01] Evaluated model ( 24/407) TPM1+FO+G4    BIC = 8269.270269
+[00:00:01] Evaluated model ( 25/407) TPM1+FO+I+G4  BIC = 8275.179992
+[00:00:01] Evaluated model ( 26/399) TPM1+FE+G4    BIC = 8505.109935
+[00:00:01] Evaluated model ( 27/399) TPM1+FE+I+G4  BIC = 8507.207855
+[00:00:01] Evaluated model ( 28/391) TPM2+FO+G4    BIC = 8268.704728
+[00:00:01] Evaluated model ( 29/391) TPM2+FO+I+G4  BIC = 8276.127959
+[00:00:01] Evaluated model ( 30/383) TPM2+FE+G4    BIC = 8402.321088
+[00:00:01] Evaluated model ( 31/383) TPM2+FE+I+G4  BIC = 8406.591598
+[00:00:01] Evaluated model ( 32/375) TPM3+FO+G4    BIC = 8269.392022
+[00:00:01] Evaluated model ( 33/375) TPM3+FO+I+G4  BIC = 8275.172500
+[00:00:01] Evaluated model ( 34/367) TPM3+FE+G4    BIC = 8507.414245
+[00:00:01] Evaluated model ( 35/367) TPM3+FE+I+G4  BIC = 8510.329525
+[00:00:01] Evaluated model ( 36/359) TIM1+FO+G4    BIC = 8267.364758
+[00:00:01] Evaluated model ( 37/359) TIM1+FO+I+G4  BIC = 8273.224944
+[00:00:01] Evaluated model ( 38/351) TIM1+FE+G4    BIC = 8436.144265
+[00:00:01] Evaluated model ( 39/351) TIM1+FE+I+G4  BIC = 8437.187201
+[00:00:01] Evaluated model ( 40/343) TIM2+FO+G4    BIC = 8269.912845
+[00:00:01] Evaluated model ( 41/343) TIM2+FO+I+G4  BIC = 8272.084178
+[00:00:01] Evaluated model ( 42/335) TIM2+FE+G4    BIC = 8350.729411
+[00:00:01] Evaluated model ( 43/335) TIM2+FE+I+G4  BIC = 8350.902903
+[00:00:01] Evaluated model ( 44/327) TIM3+FO+G4    BIC = 8266.999476
+[00:00:01] Evaluated model ( 45/327) TIM3+FO+I+G4  BIC = 8271.341896
+[00:00:01] Evaluated model ( 46/319) TIM3+FE+G4    BIC = 8437.777508
+[00:00:01] Evaluated model ( 47/319) TIM3+FE+I+G4  BIC = 8439.889177
+[00:00:02] Evaluated model ( 48/311) TVM+FO+G4     BIC = 8280.884214
+[00:00:02] Evaluated model ( 49/311) TVM+FO+I+G4   BIC = 8288.967623
+[00:00:02] Evaluated model ( 50/303) TVM+FE+G4     BIC = 8412.566792
+[00:00:02] Evaluated model ( 51/303) TVM+FE+I+G4   BIC = 8416.562900
+
+Best model(s):
+Partition #0: TN93+FO+G4m (LogLH = -4068.258011  BIC = 8261.121780)
+
+NOTE: Binary MSA file updated: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/moose_DNA8_default/test.raxml.rba
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:02] Data distribution: max. partitions/sites/weight per thread: 1 / 332 / 5312
+[00:00:02] Data distribution: max. searches per worker: 1
+
+Model testing results saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/moose_DNA8_default/test.raxml.moose.xml
+Best-fit model saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/moose_DNA8_default/test.raxml.moose.bestModel
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/moose_DNA8_default/test.raxml.log
+
+Analysis started: 30-Oct-2025 15:31:10 / finished: 30-Oct-2025 15:31:12
+
+Elapsed time: 2.157 seconds
+

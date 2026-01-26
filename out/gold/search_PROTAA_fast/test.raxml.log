@@ -1,0 +1,305 @@
+
+RAxML-NG v. 2.0.0-dev released on 30.10.2025 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 30-Oct-2025 15:11:07 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --fast --msa /home/alex/hits/ngtest/data/prot21.fa --model AA --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Model selection + ML tree search (simplified)
+  start tree(s): parsimony+SPR (1)
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  stopping rule: KH - multiple testing correction
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  FreeRate optimization method: AUTO
+  model selection information criterion: BIC
+  model selection heuristics: RHAS(ic-delta=10.000000, mode=all significant) FreeRate 
+  model selection RHAS: R I+R E I G I+G  (FreeRate categories: 2-10)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/prot21.fa
+[00:00:00] Loaded alignment with 21 taxa and 113 sites
+
+Alignment comprises 1 partitions and 111 patterns
+
+Partition 0: noname
+Model: LG+G4m
+Alignment sites / patterns: 113 / 111
+Gaps: 12.64 %
+Invariant sites: 13.27 %
+
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test.raxml.rba
+
+[00:00:00] Generating 1 parsimony starting tree(s) with 21 taxa
+[00:00:00] Parallel parsimony: 1 trees with 1 threads
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+
+Starting model selection with parsimony starting tree using 1 threads
+
+[00:00:00] Evaluated model (   1/1408) LG+FC+R2           BIC = 6064.373982
+[00:00:00] Evaluated model (   2/1408) LG+FC+R3           BIC = 6065.986684
+[00:00:00] Evaluated model (   3/1407) LG+FC+I+R2         BIC = 6062.898978
+[00:00:00] Evaluated model (   4/1407) LG+FC+I+R3         BIC = 6069.319712
+[00:00:00] Evaluated model (   5/1406) LG+FC              BIC = 6157.361921
+[00:00:00] Evaluated model (   6/1406) LG+FC+I            BIC = 6125.378015
+[00:00:00] Evaluated model (   7/1406) LG+FC+G4           BIC = 6053.118008
+[00:00:00] Evaluated model (   8/1406) LG+FC+I+G4         BIC = 6054.267351
+[00:00:00] Evaluated model (   9/1391) LG+I+R2            BIC = 5982.535879
+[00:00:00] Evaluated model (  10/1387) LG+G4              BIC = 5972.928059
+[00:00:00] Evaluated model (  11/1387) LG+I+G4            BIC = 5972.729269
+[00:00:01] Evaluated model (  12/1384) DAYHOFF+FC+I+R2    BIC = 6212.385450
+[00:00:01] Evaluated model (  13/1380) DAYHOFF+FC+G4      BIC = 6206.567206
+[00:00:01] Evaluated model (  14/1380) DAYHOFF+FC+I+G4    BIC = 6204.268577
+[00:00:01] Evaluated model (  15/1377) DAYHOFF+I+R2       BIC = 6155.860079
+[00:00:01] Evaluated model (  16/1373) DAYHOFF+G4         BIC = 6149.559589
+[00:00:01] Evaluated model (  17/1373) DAYHOFF+I+G4       BIC = 6145.164042
+[00:00:01] Evaluated model (  18/1370) DCMUT+FC+I+R2      BIC = 6212.648007
+[00:00:01] Evaluated model (  19/1366) DCMUT+FC+G4        BIC = 6206.801141
+[00:00:01] Evaluated model (  20/1366) DCMUT+FC+I+G4      BIC = 6204.522239
+[00:00:01] Evaluated model (  21/1363) DCMUT+I+R2         BIC = 6156.099340
+[00:00:01] Evaluated model (  22/1359) DCMUT+G4           BIC = 6149.831236
+[00:00:01] Evaluated model (  23/1359) DCMUT+I+G4         BIC = 6145.439947
+[00:00:02] Evaluated model (  24/1356) JTT+FC+I+R2        BIC = 6171.749140
+[00:00:02] Evaluated model (  25/1352) JTT+FC+G4          BIC = 6164.792599
+[00:00:02] Evaluated model (  26/1352) JTT+FC+I+G4        BIC = 6162.801918
+[00:00:02] Evaluated model (  27/1349) JTT+I+R2           BIC = 6092.331365
+[00:00:02] Evaluated model (  28/1345) JTT+G4             BIC = 6086.088754
+[00:00:02] Evaluated model (  29/1345) JTT+I+G4           BIC = 6082.996135
+[00:00:02] Evaluated model (  30/1342) MTREV+FC+I+R2      BIC = 6216.883052
+[00:00:02] Evaluated model (  31/1338) MTREV+FC+G4        BIC = 6203.576517
+[00:00:02] Evaluated model (  32/1338) MTREV+FC+I+G4      BIC = 6205.358008
+[00:00:02] Evaluated model (  33/1335) MTREV+I+R2         BIC = 6424.726093
+[00:00:02] Evaluated model (  34/1331) MTREV+G4           BIC = 6414.961401
+[00:00:02] Evaluated model (  35/1331) MTREV+I+G4         BIC = 6416.415141
+[00:00:03] Evaluated model (  36/1328) WAG+FC+I+R2        BIC = 6084.401671
+[00:00:03] Evaluated model (  37/1324) WAG+FC+G4          BIC = 6078.509890
+[00:00:03] Evaluated model (  38/1324) WAG+FC+I+G4        BIC = 6076.917578
+[00:00:03] Evaluated model (  39/1321) WAG+I+R2           BIC = 6023.720933
+[00:00:03] Evaluated model (  40/1317) WAG+G4             BIC = 6020.450253
+[00:00:03] Evaluated model (  41/1317) WAG+I+G4           BIC = 6016.433525
+[00:00:03] Evaluated model (  42/1314) RTREV+FC+I+R2      BIC = 6074.484392
+[00:00:03] Evaluated model (  43/1310) RTREV+FC+G4        BIC = 6065.785677
+[00:00:03] Evaluated model (  44/1310) RTREV+FC+I+G4      BIC = 6066.501664
+[00:00:03] Evaluated model (  45/1307) RTREV+I+R2         BIC = 6048.709215
+[00:00:03] Evaluated model (  46/1303) RTREV+G4           BIC = 6041.451142
+[00:00:04] Evaluated model (  47/1303) RTREV+I+G4         BIC = 6040.974933
+[00:00:04] Evaluated model (  48/1300) CPREV+FC+I+R2      BIC = 6122.219799
+[00:00:04] Evaluated model (  49/1296) CPREV+FC+G4        BIC = 6117.647487
+[00:00:04] Evaluated model (  50/1296) CPREV+FC+I+G4      BIC = 6114.202524
+[00:00:04] Evaluated model (  51/1293) CPREV+I+R2         BIC = 6039.482000
+[00:00:04] Evaluated model (  52/1289) CPREV+G4           BIC = 6036.465713
+[00:00:04] Evaluated model (  53/1289) CPREV+I+G4         BIC = 6032.963876
+[00:00:04] Evaluated model (  54/1286) VT+FC+I+R2         BIC = 6107.439832
+[00:00:04] Evaluated model (  55/1282) VT+FC+G4           BIC = 6100.932469
+[00:00:04] Evaluated model (  56/1282) VT+FC+I+G4         BIC = 6098.919171
+[00:00:04] Evaluated model (  57/1279) VT+I+R2            BIC = 6033.458909
+[00:00:04] Evaluated model (  58/1275) VT+G4              BIC = 6028.316275
+[00:00:05] Evaluated model (  59/1275) VT+I+G4            BIC = 6024.564533
+[00:00:05] Evaluated model (  60/1272) BLOSUM62+FC+I+R2   BIC = 6118.349369
+[00:00:05] Evaluated model (  61/1268) BLOSUM62+FC+G4     BIC = 6113.138690
+[00:00:05] Evaluated model (  62/1268) BLOSUM62+FC+I+G4   BIC = 6111.062523
+[00:00:05] Evaluated model (  63/1265) BLOSUM62+I+R2      BIC = 6027.402829
+[00:00:05] Evaluated model (  64/1261) BLOSUM62+G4        BIC = 6023.306964
+[00:00:05] Evaluated model (  65/1261) BLOSUM62+I+G4      BIC = 6020.443286
+[00:00:05] Evaluated model (  66/1258) MTMAM+FC+I+R2      BIC = 6399.973384
+[00:00:05] Evaluated model (  67/1254) MTMAM+FC+G4        BIC = 6377.863287
+[00:00:05] Evaluated model (  68/1254) MTMAM+FC+I+G4      BIC = 6380.225325
+[00:00:05] Evaluated model (  69/1251) MTMAM+I+R2         BIC = 6599.538849
+[00:00:05] Evaluated model (  70/1247) MTMAM+G4           BIC = 6572.901953
+[00:00:05] Evaluated model (  71/1247) MTMAM+I+G4         BIC = 6575.192394
+[00:00:06] Evaluated model (  72/1244) MTART+FC+I+R2      BIC = 6232.108461
+[00:00:06] Evaluated model (  73/1240) MTART+FC+G4        BIC = 6219.583499
+[00:00:06] Evaluated model (  74/1240) MTART+FC+I+G4      BIC = 6222.556628
+[00:00:06] Evaluated model (  75/1237) MTART+I+R2         BIC = 6432.689399
+[00:00:06] Evaluated model (  76/1233) MTART+G4           BIC = 6415.870887
+[00:00:06] Evaluated model (  77/1233) MTART+I+G4         BIC = 6418.973577
+[00:00:06] Evaluated model (  78/1230) MTZOA+FC+I+R2      BIC = 6160.101675
+[00:00:06] Evaluated model (  79/1226) MTZOA+FC+G4        BIC = 6146.773805
+[00:00:06] Evaluated model (  80/1226) MTZOA+FC+I+G4      BIC = 6148.940808
+[00:00:06] Evaluated model (  81/1223) MTZOA+I+R2         BIC = 6282.220580
+[00:00:06] Evaluated model (  82/1219) MTZOA+G4           BIC = 6270.632425
+[00:00:06] Evaluated model (  83/1219) MTZOA+I+G4         BIC = 6273.379629
+[00:00:06] Evaluated model (  84/1216) PMB+FC+I+R2        BIC = 6134.371724
+[00:00:06] Evaluated model (  85/1212) PMB+FC+G4          BIC = 6128.967533
+[00:00:07] Evaluated model (  86/1212) PMB+FC+I+G4        BIC = 6127.512173
+[00:00:07] Evaluated model (  87/1209) PMB+I+R2           BIC = 6050.058566
+[00:00:07] Evaluated model (  88/1205) PMB+G4             BIC = 6045.807466
+[00:00:07] Evaluated model (  89/1205) PMB+I+G4           BIC = 6043.484060
+[00:00:07] Evaluated model (  90/1202) HIVB+FC+I+R2       BIC = 6332.072214
+[00:00:07] Evaluated model (  91/1198) HIVB+FC+G4         BIC = 6324.237420
+[00:00:07] Evaluated model (  92/1198) HIVB+FC+I+G4       BIC = 6319.743273
+[00:00:07] Evaluated model (  93/1195) HIVB+I+R2          BIC = 6243.853557
+[00:00:07] Evaluated model (  94/1191) HIVB+G4            BIC = 6235.008390
+[00:00:07] Evaluated model (  95/1191) HIVB+I+G4          BIC = 6229.369932
+[00:00:07] Evaluated model (  96/1188) HIVW+FC+I+R2       BIC = 6545.809194
+[00:00:07] Evaluated model (  97/1184) HIVW+FC+G4         BIC = 6536.267445
+[00:00:07] Evaluated model (  98/1184) HIVW+FC+I+G4       BIC = 6528.652354
+[00:00:08] Evaluated model (  99/1181) HIVW+I+R2          BIC = 6500.089975
+[00:00:08] Evaluated model ( 100/1177) HIVW+G4            BIC = 6486.959306
+[00:00:08] Evaluated model ( 101/1177) HIVW+I+G4          BIC = 6480.258180
+[00:00:08] Evaluated model ( 102/1174) JTT-DCMUT+FC+I+R2  BIC = 6169.206717
+[00:00:08] Evaluated model ( 103/1170) JTT-DCMUT+FC+G4    BIC = 6162.270430
+[00:00:08] Evaluated model ( 104/1170) JTT-DCMUT+FC+I+G4  BIC = 6160.306757
+[00:00:08] Evaluated model ( 105/1167) JTT-DCMUT+I+R2     BIC = 6090.078967
+[00:00:08] Evaluated model ( 106/1163) JTT-DCMUT+G4       BIC = 6083.874338
+[00:00:08] Evaluated model ( 107/1163) JTT-DCMUT+I+G4     BIC = 6080.756547
+[00:00:08] Evaluated model ( 108/1160) FLU+FC+I+R2        BIC = 6307.136145
+[00:00:08] Evaluated model ( 109/1156) FLU+FC+G4          BIC = 6297.572572
+[00:00:09] Evaluated model ( 110/1156) FLU+FC+I+G4        BIC = 6295.052242
+[00:00:09] Evaluated model ( 111/1153) FLU+I+R2           BIC = 6194.228181
+[00:00:09] Evaluated model ( 112/1149) FLU+G4             BIC = 6185.291687
+[00:00:09] Evaluated model ( 113/1149) FLU+I+G4           BIC = 6182.166184
+[00:00:09] Evaluated model ( 114/1146) FLAVI+FC+I+R2      BIC = 6467.607170
+[00:00:09] Evaluated model ( 115/1142) FLAVI+FC+G4        BIC = 6451.380197
+[00:00:09] Evaluated model ( 116/1142) FLAVI+FC+I+G4      BIC = 6449.012535
+[00:00:09] Evaluated model ( 117/1139) FLAVI+I+R2         BIC = 6365.281683
+[00:00:09] Evaluated model ( 118/1135) FLAVI+G4           BIC = 6345.602606
+[00:00:09] Evaluated model ( 119/1135) FLAVI+I+G4         BIC = 6344.707655
+[00:00:09] Evaluated model ( 120/1132) mtMET+FC+I+R2      BIC = 6237.988044
+[00:00:09] Evaluated model ( 121/1128) mtMET+FC+G4        BIC = 6222.050532
+[00:00:09] Evaluated model ( 122/1128) mtMET+FC+I+G4      BIC = 6222.780802
+[00:00:09] Evaluated model ( 123/1125) mtMET+I+R2         BIC = 6373.628079
+[00:00:10] Evaluated model ( 124/1121) mtMET+G4           BIC = 6360.250986
+[00:00:10] Evaluated model ( 125/1121) mtMET+I+G4         BIC = 6362.034633
+[00:00:10] Evaluated model ( 126/1118) mtINV+FC+I+R2      BIC = 6174.505979
+[00:00:10] Evaluated model ( 127/1114) mtINV+FC+G4        BIC = 6162.434505
+[00:00:10] Evaluated model ( 128/1114) mtINV+FC+I+G4      BIC = 6162.777521
+[00:00:10] Evaluated model ( 129/1111) mtINV+I+R2         BIC = 6355.564293
+[00:00:10] Evaluated model ( 130/1107) mtINV+G4           BIC = 6346.567436
+[00:00:10] Evaluated model ( 131/1107) mtINV+I+G4         BIC = 6347.902603
+[00:00:10] Evaluated model ( 132/1104) mtVER+FC+I+R2      BIC = 6389.054723
+[00:00:10] Evaluated model ( 133/1100) mtVER+FC+G4        BIC = 6361.415183
+[00:00:10] Evaluated model ( 134/1100) mtVER+FC+I+G4      BIC = 6362.654630
+[00:00:10] Evaluated model ( 135/1097) mtVER+I+R2         BIC = 6554.796814
+[00:00:10] Evaluated model ( 136/1093) mtVER+G4           BIC = 6529.493040
+[00:00:10] Evaluated model ( 137/1093) mtVER+I+G4         BIC = 6532.283160
+[00:00:11] Evaluated model ( 138/1090) DEN+FC+I+R2        BIC = 6093.642958
+[00:00:11] Evaluated model ( 139/1086) DEN+FC+G4          BIC = 6083.547965
+[00:00:11] Evaluated model ( 140/1086) DEN+FC+I+G4        BIC = 6084.651739
+[00:00:11] Evaluated model ( 141/1083) DEN+I+R2           BIC = 6014.070991
+[00:00:11] Evaluated model ( 142/1079) DEN+G4             BIC = 6004.228440
+[00:00:11] Evaluated model ( 143/1079) DEN+I+G4           BIC = 6004.806972
+[00:00:11] Evaluated model ( 144/1076) STMTREV+FC+I+R2    BIC = 6441.537783
+[00:00:11] Evaluated model ( 145/1072) STMTREV+FC+G4      BIC = 6431.241352
+[00:00:11] Evaluated model ( 146/1072) STMTREV+FC+I+G4    BIC = 6425.566656
+[00:00:11] Evaluated model ( 147/1069) STMTREV+I+R2       BIC = 6358.771443
+[00:00:11] Evaluated model ( 148/1065) STMTREV+G4         BIC = 6341.913806
+[00:00:11] Evaluated model ( 149/1065) STMTREV+I+G4       BIC = 6340.548342
+[00:00:11] Evaluated model ( 150/1062) Q.PFAM+FC+I+R2     BIC = 6067.887461
+[00:00:12] Evaluated model ( 151/1058) Q.PFAM+FC+G4       BIC = 6058.216576
+[00:00:12] Evaluated model ( 152/1058) Q.PFAM+FC+I+G4     BIC = 6060.158443
+[00:00:12] Evaluated model ( 153/1055) Q.PFAM+I+R2        BIC = 5997.860566
+[00:00:12] Evaluated model ( 154/1051) Q.PFAM+G4          BIC = 5989.017914
+[00:00:12] Evaluated model ( 155/1051) Q.PFAM+I+G4        BIC = 5989.242525
+[00:00:12] Evaluated model ( 156/1048) Q.PFAM_GB+FC+I+R2  BIC = 6068.026629
+[00:00:12] Evaluated model ( 157/1044) Q.PFAM_GB+FC+G4    BIC = 6057.063100
+[00:00:12] Evaluated model ( 158/1044) Q.PFAM_GB+FC+I+G4  BIC = 6058.795138
+[00:00:12] Evaluated model ( 159/1041) Q.PFAM_GB+I+R2     BIC = 5994.459622
+[00:00:12] Evaluated model ( 160/1037) Q.PFAM_GB+G4       BIC = 5983.646201
+[00:00:12] Evaluated model ( 161/1037) Q.PFAM_GB+I+G4     BIC = 5984.404404
+[00:00:12] Evaluated model ( 162/1034) Q.LG+FC+I+R2       BIC = 6057.807377
+[00:00:13] Evaluated model ( 163/1030) Q.LG+FC+G4         BIC = 6048.007899
+[00:00:13] Evaluated model ( 164/1030) Q.LG+FC+I+G4       BIC = 6048.767339
+[00:00:13] Evaluated model ( 165/1027) Q.LG+I+R2          BIC = 5978.377180
+[00:00:13] Evaluated model ( 166/1023) Q.LG+G4            BIC = 5969.386233
+[00:00:13] Evaluated model ( 167/1023) Q.LG+I+G4          BIC = 5969.366505
+[00:00:13] Evaluated model ( 168/1020) Q.BIRD+FC+I+R2     BIC = 6320.984224
+[00:00:13] Evaluated model ( 169/1016) Q.BIRD+FC+G4       BIC = 6308.878722
+[00:00:13] Evaluated model ( 170/1016) Q.BIRD+FC+I+G4     BIC = 6308.397688
+[00:00:13] Evaluated model ( 171/1013) Q.BIRD+I+R2        BIC = 6245.300839
+[00:00:13] Evaluated model ( 172/1009) Q.BIRD+G4          BIC = 6234.390751
+[00:00:13] Evaluated model ( 173/1009) Q.BIRD+I+G4        BIC = 6232.755204
+[00:00:13] Evaluated model ( 174/1006) Q.INSECT+FC+I+R2   BIC = 6137.567373
+[00:00:14] Evaluated model ( 175/1002) Q.INSECT+FC+G4     BIC = 6127.614369
+[00:00:14] Evaluated model ( 176/1002) Q.INSECT+FC+I+G4   BIC = 6128.438392
+[00:00:14] Evaluated model ( 177/ 999) Q.INSECT+I+R2      BIC = 6030.171215
+[00:00:14] Evaluated model ( 178/ 995) Q.INSECT+G4        BIC = 6021.712086
+[00:00:14] Evaluated model ( 179/ 995) Q.INSECT+I+G4      BIC = 6021.618486
+[00:00:14] Evaluated model ( 180/ 992) Q.MAMMAL+FC+I+R2   BIC = 6271.893910
+[00:00:14] Evaluated model ( 181/ 988) Q.MAMMAL+FC+G4     BIC = 6261.793199
+[00:00:14] Evaluated model ( 182/ 988) Q.MAMMAL+FC+I+G4   BIC = 6261.754288
+[00:00:14] Evaluated model ( 183/ 985) Q.MAMMAL+I+R2      BIC = 6196.250176
+[00:00:14] Evaluated model ( 184/ 981) Q.MAMMAL+G4        BIC = 6187.343884
+[00:00:14] Evaluated model ( 185/ 981) Q.MAMMAL+I+G4      BIC = 6186.376093
+[00:00:14] Evaluated model ( 186/ 978) Q.PLANT+FC+I+R2    BIC = 6199.064155
+[00:00:15] Evaluated model ( 187/ 974) Q.PLANT+FC+G4      BIC = 6186.427668
+[00:00:15] Evaluated model ( 188/ 974) Q.PLANT+FC+I+G4    BIC = 6187.196922
+[00:00:15] Evaluated model ( 189/ 971) Q.PLANT+I+R2       BIC = 6103.758781
+[00:00:15] Evaluated model ( 190/ 967) Q.PLANT+G4         BIC = 6092.340850
+[00:00:15] Evaluated model ( 191/ 967) Q.PLANT+I+G4       BIC = 6091.889709
+[00:00:15] Evaluated model ( 192/ 964) Q.YEAST+FC+I+R2    BIC = 6100.822376
+[00:00:15] Evaluated model ( 193/ 960) Q.YEAST+FC+G4      BIC = 6091.063710
+[00:00:15] Evaluated model ( 194/ 960) Q.YEAST+FC+I+G4    BIC = 6092.060685
+[00:00:15] Evaluated model ( 195/ 957) Q.YEAST+I+R2       BIC = 6014.407214
+[00:00:15] Evaluated model ( 196/ 953) Q.YEAST+G4         BIC = 6006.026333
+[00:00:15] Evaluated model ( 197/ 953) Q.YEAST+I+G4       BIC = 6005.354299
+
+Best model(s):
+Partition #0: Q.LG+I+G4m (LogLH = -2887.771802  BIC = 5969.366505)
+
+NOTE: Binary MSA file updated: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test.raxml.rba
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:15] Data distribution: max. partitions/sites/weight per thread: 1 / 111 / 8880
+[00:00:15] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:15 -3049.839959] Heuristic: simplified, stopping rule: KH - multiple testing correction
+[00:00:15 -3049.839959] Initial branch length optimization
+[00:00:15 -2894.707090] Model parameter optimization (eps = 10.000000)
+[00:00:15 -2889.261060] FAST spr round 1 (radius: 10)
+[00:00:16 -2871.049219] Model parameter optimization (eps = 3.000000)
+[00:00:16 -2869.689024] SLOW spr round 1 (radius: 10)
+[00:00:16 -2869.102658] Model parameter optimization (eps = 0.100000)
+
+[00:00:16] ML tree search #1, logLikelihood: -2869.097620
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 2.189344 (ML),  weights&rates: (0.250000,0.314875) (0.250000,0.673748) (0.250000,1.074078) (0.250000,1.937299) 
+   P-inv (ML): 0.048108
+   Base frequencies (model): 0.080009 0.052947 0.041171 0.050146 0.015018 0.035929 0.061392 0.064793 0.021709 0.063895 0.106292 0.057047 0.023440 0.047712 0.039604 0.062980 0.052863 0.014987 0.037434 0.070634 
+   Substitution rates (model): 0.424058 0.271250 0.401980 2.327453 1.072850 1.069799 1.793213 0.392891 0.138015 0.367359 0.563979 1.128144 0.236259 1.158823 4.667976 2.159899 0.151863 0.192904 2.511549 0.764825 0.140795 0.519625 3.123616 0.402469 0.339928 2.558127 0.132224 0.278306 6.845986 0.489463 0.055016 0.344519 0.835065 0.617964 0.477052 0.274768 0.180666 5.062143 0.507640 1.879769 0.595330 1.257893 4.639398 0.192515 0.065287 2.226005 0.408708 0.092864 0.176378 3.955582 2.022264 0.039141 0.526874 0.088670 0.071616 0.664579 5.601033 0.741296 0.987385 0.013804 0.014186 0.353825 0.023806 0.016999 0.403179 1.241154 0.477448 0.025562 0.124041 0.042436 0.104403 0.000111 0.488516 0.677158 0.328677 0.536563 0.002830 0.904438 0.957089 0.080798 2.628966 1.129406 0.529678 1.020373 1.853035 4.776314 0.272682 5.468173 0.094404 0.592379 3.797608 1.839461 0.037738 0.708201 1.346684 1.248401 0.221132 0.276139 0.252220 0.332129 0.498258 0.045492 0.071725 2.027715 0.196671 0.018574 0.456455 0.670392 0.659780 0.066497 0.112343 0.270635 0.296507 0.009271 0.041523 0.282308 0.125388 0.075226 0.180072 1.526698 0.124572 0.187213 0.044356 0.078641 0.121398 0.366699 0.801984 0.497496 0.703446 0.538060 1.067966 0.649140 0.555297 5.074608 0.148866 3.930812 0.169487 4.359961 1.021153 0.083244 0.054380 1.017998 0.099537 0.213438 11.081232 0.141911 6.201341 2.226104 0.235273 0.183117 0.303427 0.479069 0.276570 1.642242 0.706301 0.019953 0.427987 0.828615 1.225975 0.048842 0.143397 0.209350 1.726515 0.111915 0.354736 2.088967 0.606744 0.480202 2.027035 0.092859 0.335900 0.169152 1.854514 6.641253 0.628362 1.341323 0.605970 0.076842 0.081148 0.310510 6.645418 0.202207 0.358926 0.091931 0.123868 0.235546 2.286257 2.373266 0.164177 0.267740 
+
+
+Final LogLikelihood: -2869.097620
+
+AIC score: 5820.195240 / AICc score: 5868.702282 / BIC score: 5932.018140
+Free parameters (model + branch lengths): 41
+
+WARNING: Best ML tree contains 1 near-zero branches!
+
+Best ML tree with collapsed near-zero branches saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test.raxml.bestTreeCollapsed
+Best ML tree saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test.raxml.bestTree
+Optimized model saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test.raxml.bestModel
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_PROTAA_fast/test.raxml.log
+
+Analysis started: 30-Oct-2025 15:11:07 / finished: 30-Oct-2025 15:11:23
+
+Elapsed time: 16.236 seconds
+
