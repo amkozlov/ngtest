@@ -1,15 +1,16 @@
 
-RAxML-NG v. 2.0.0-dev released on 24.10.2024 by The Exelixis Lab.
-Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
-Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
+RAxML-NG v. 2.0.0-dev released on 22.01.2026 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
 Latest version: https://github.com/amkozlov/raxml-ng
 Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
 
 System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
 
-RAxML-NG was called at 24-Oct-2024 13:49:38 as follows:
+RAxML-NG was called at 22-Jan-2026 23:43:13 as follows:
 
-/home/alex/hits/raxml-ng/bin/raxml-ng-static --msa /home/alex/hits/ngtest/data/dna8.fa --model /home/alex/hits/ngtest/data/dna8.part --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_DNA_part_linked/test --seed 1 --threads 1 --redo --brlen linked
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --msa /home/alex/hits/ngtest/data/dna8.fa --model /home/alex/hits/ngtest/data/dna8.part --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_DNA_part_linked/test --seed 1 --threads 1 --redo --brlen linked
 
 Analysis options:
   run mode: ML tree search (adaptive)
@@ -20,10 +21,12 @@ Analysis options:
   per-rate scalers: OFF
   site repeats: ON
   logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  stopping rule: OFF
   fast spr radius: AUTO
   spr subtree cutoff: 1.000000
   fast CLV updates: ON
   branch lengths: linked (ML estimate, algorithm: NR-FAST)
+  FreeRate optimization method: AUTO
   SIMD kernels: AVX2
   parallelization: coarse-grained (auto), NONE/sequential
 
@@ -54,15 +57,16 @@ Invariant sites: 7.23 %
 
 
 [00:00:00] Adaptive mode: Predicting difficulty of the MSA ...
-[00:00:00] Parallel parsimony: 100 trees with 1 threads
-[00:00:00] Predicted difficulty: 0.08
+[00:00:00] Parallel parsimony: 24 trees with 1 threads
+[00:00:00] Predicted difficulty: 0.02
 
 NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_DNA_part_linked/test.raxml.rba
 
-Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
-
 [00:00:00] Generating 1 random starting tree(s) with 8 taxa
 [00:00:00] Generating 2 parsimony starting tree(s) with 8 taxa
+
+Parallelization scheme for tree search (auto): 1 worker(s) x 1 thread(s)
+
 Parallel reduction/worker buffer size: 1 KB  / 0 KB
 
 [00:00:00] Data distribution: max. partitions/sites/weight per thread: 3 / 363 / 5808
@@ -70,47 +74,42 @@ Parallel reduction/worker buffer size: 1 KB  / 0 KB
 
 Starting ML tree search with 3 distinct starting trees
 
+[00:00:00 -4527.286339] Heuristic: adaptive, stopping rules: off, epsilon = 10.000000
 [00:00:00 -4527.286339] Initial branch length optimization
 [00:00:00 -4280.596202] Model parameter optimization (eps = 10.000000)
-[00:00:00 -3923.709539] NNI round tolerance = 1.000000, epsilon = 10.000000
-[00:00:00 -3879.943540] SPR round 1 (radius: 5)
-[00:00:00 -3879.941565] Model parameter optimization (eps = 10.000000)
-[00:00:00 -3870.966598] FAST spr round 1 (radius: 5)
-[00:00:00 -3870.273984] Model parameter optimization (eps = 3.000000)
-[00:00:00 -3864.372984] SLOW spr round 1 (radius: 5)
-[00:00:00 -3863.622032] Model parameter optimization (eps = 0.100000)
+[00:00:00 -3923.709610] FAST spr round 1 (radius: 5)
+[00:00:00 -3882.294143] FAST spr round 2 (radius: 5)
+[00:00:00 -3879.921195] Model parameter optimization (eps = 3.000000)
+[00:00:00 -3864.413409] SLOW spr round 1 (radius: 5)
+[00:00:00 -3863.711496] Model parameter optimization (eps = 0.100000)
 
-[00:00:00] ML tree search #1, logLikelihood: -3833.395458
+[00:00:00] ML tree search #1, logLikelihood: -3833.637817
 
-[00:00:00 -4364.216305] Initial branch length optimization
-[00:00:00 -4228.142352] Model parameter optimization (eps = 10.000000)
-[00:00:01 -3882.172728] NNI round tolerance = 1.000000, epsilon = 10.000000
-[00:00:01 -3877.790453] SPR round 1 (radius: 5)
-[00:00:01 -3877.789371] Model parameter optimization (eps = 10.000000)
-[00:00:01 -3872.663724] FAST spr round 1 (radius: 5)
-[00:00:01 -3872.328553] Model parameter optimization (eps = 3.000000)
-[00:00:01 -3865.639525] SLOW spr round 1 (radius: 5)
-[00:00:01 -3864.995304] Model parameter optimization (eps = 0.100000)
+[00:00:00 -4373.196697] Heuristic: adaptive, stopping rules: off, epsilon = 10.000000
+[00:00:00 -4373.196697] Initial branch length optimization
+[00:00:00 -4228.153661] Model parameter optimization (eps = 10.000000)
+[00:00:00 -3882.212613] FAST spr round 1 (radius: 5)
+[00:00:00 -3877.838297] Model parameter optimization (eps = 3.000000)
+[00:00:00 -3869.940698] SLOW spr round 1 (radius: 5)
+[00:00:00 -3868.805819] Model parameter optimization (eps = 0.100000)
 
-[00:00:01] ML tree search #2, logLikelihood: -3833.953941
+[00:00:01] ML tree search #2, logLikelihood: -3834.371115
 
-[00:00:01 -4343.233981] Initial branch length optimization
-[00:00:01 -4226.661169] Model parameter optimization (eps = 10.000000)
-[00:00:01 -3877.594066] NNI round tolerance = 1.000000, epsilon = 10.000000
-[00:00:01 -3876.390567] SPR round 1 (radius: 5)
-[00:00:01 -3876.389589] Model parameter optimization (eps = 10.000000)
-[00:00:01 -3871.894583] FAST spr round 1 (radius: 5)
-[00:00:01 -3871.428491] Model parameter optimization (eps = 3.000000)
-[00:00:01 -3864.887416] SLOW spr round 1 (radius: 5)
-[00:00:01 -3864.242271] Model parameter optimization (eps = 0.100000)
+[00:00:01 -4351.733401] Heuristic: adaptive, stopping rules: off, epsilon = 10.000000
+[00:00:01 -4351.733401] Initial branch length optimization
+[00:00:01 -4226.661354] Model parameter optimization (eps = 10.000000)
+[00:00:01 -3877.579784] FAST spr round 1 (radius: 5)
+[00:00:01 -3876.384600] Model parameter optimization (eps = 3.000000)
+[00:00:01 -3869.096880] SLOW spr round 1 (radius: 5)
+[00:00:01 -3867.801499] Model parameter optimization (eps = 0.100000)
 
-[00:00:02] ML tree search #3, logLikelihood: -3833.475105
+[00:00:02] ML tree search #3, logLikelihood: -3834.110419
 
 
 
-Final LogLikelihood: -3833.395458
+Final LogLikelihood: -3833.637817
 
-AIC score: 7746.790916 / AICc score: 7751.730675 / BIC score: 7929.118828
+AIC score: 7747.275634 / AICc score: 7752.215393 / BIC score: 7929.603546
 Free parameters (model + branch lengths): 40
 
 Best ML tree saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_DNA_part_linked/test.raxml.bestTree
@@ -119,7 +118,7 @@ Optimized model saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_DNA_p
 
 Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/search_DNA_part_linked/test.raxml.log
 
-Analysis started: 24-Oct-2024 13:49:38 / finished: 24-Oct-2024 13:49:40
+Analysis started: 22-Jan-2026 23:43:13 / finished: 22-Jan-2026 23:43:16
 
-Elapsed time: 2.515 seconds
+Elapsed time: 2.225 seconds
 
