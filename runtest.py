@@ -51,7 +51,7 @@ def cmd_outfiles(command, opts={}):
     elif command=="ebg":
         files = ["log", "startTree", "bestTree", "bestModel", "supportEBG"]
     elif command=="moose":
-        files = ["log", "startTree", "moose.bestModel", "moose.xml"]
+        files = ["log", "startTree", "moose.bestModel", "moose.json"]
     elif command=="ancestral":
         files = ["log", "ancestralTree", "ancestralStates", "ancestralProbs"]
     elif command=="mutmap":
@@ -301,6 +301,7 @@ if __name__ == "__main__":
       print(" 🔴  Tests failed: ", errors, " / ", total)
   else:
       print(" 🟢  All test completed successfully: ", total)
+  print("")
 
 # RAXNG=~/hits/raxml-ng/bin/raxml-ng-static DATADIR=~/hits/ngtest/data PREFIX=~/hits/ngtest/out/0.7.0/search_GTR_default/test
 

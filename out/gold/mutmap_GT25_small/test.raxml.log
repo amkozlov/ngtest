@@ -1,0 +1,70 @@
+
+RAxML-NG v. 2.0.0-dev released on 27.01.2026 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 27-Jan-2026 17:35:36 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --mutmap --msa /home/alex/hits/ngtest/data/gt25_small.vcf --model all=/home/alex/hits/ngtest/data/gt25_GT16.model --tree /home/alex/hits/ngtest/data/gt25.tree --opt-branches off --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/mutmap_GT25_small/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Mutation mapping
+  start tree(s): user
+  random seed: 1
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/gt25_small.vcf
+[00:00:00] Loaded alignment with 25 taxa and 15 sites
+
+Alignment comprises 1 partitions and 15 sites
+
+Partition 0: noname
+Model: GT16{242.637/210.667/246.564/1/267.924/256.98}+FU{0.124335/0.175641/0.187109/0.142398/0.000124/0.000124/0.027309/0.013464/0.000124/0.000124/0.053989/0.120083/0.000124/0.000124/0.107192/0.047735}
+Alignment sites: 15
+Gaps: 31.47 %
+Invariant sites: 0.00 %
+
+
+[00:00:00] Loading user starting tree(s) from: /home/alex/hits/ngtest/data/gt25.tree
+
+Parallelization scheme for tree search (auto): 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 15 / 240
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00] Tree #1, initial LogLikelihood: -1299.355122
+
+[00:00:00 -1299.355122] Initial branch length optimization
+[00:00:00 -1299.355122] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #1, final logLikelihood: -1299.355122
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: NONE
+   Base frequencies (user): 0.124335 0.175641 0.187109 0.142398 0.000124 0.000124 0.027309 0.013464 0.000124 0.000124 0.053989 0.120083 0.000124 0.000124 0.107192 0.047735 
+   Substitution rates (user): 0.001000 0.001000 0.001000 242.636628 210.666896 246.563579 0.001000 0.001000 0.001000 242.636628 210.666896 246.563579 0.001000 0.001000 0.001000 0.001000 0.001000 242.636628 0.001000 0.001000 1.000000 267.923718 0.001000 242.636628 0.001000 0.001000 1.000000 267.923718 0.001000 0.001000 0.001000 210.666896 0.001000 1.000000 0.001000 256.979547 0.001000 210.666896 0.001000 1.000000 0.001000 256.979547 0.001000 0.001000 246.563579 0.001000 267.923718 256.979547 0.001000 0.001000 246.563579 0.001000 267.923718 256.979547 1.000000 267.923718 210.666896 246.563579 0.001000 0.001000 0.001000 0.001000 210.666896 246.563579 0.001000 256.979547 242.636628 0.001000 246.563579 0.001000 0.001000 0.001000 0.001000 0.001000 246.563579 0.001000 242.636628 210.666896 0.001000 0.001000 0.001000 0.001000 0.001000 0.001000 256.979547 267.923718 210.666896 0.001000 0.001000 0.001000 0.001000 267.923718 1.000000 246.563579 0.001000 0.001000 0.001000 0.001000 0.001000 0.001000 246.563579 0.001000 267.923718 0.001000 0.001000 1.000000 267.923718 0.001000 0.001000 0.001000 256.979547 242.636628 0.001000 0.001000 0.001000 242.636628 210.666896 256.979547 0.001000 1.000000 
+
+Branch-labeled tree saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/mutmap_GT25_small/test.raxml.mutationMapTree
+Per-branch mutation list saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/mutmap_GT25_small/test.raxml.mutationMapList
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/mutmap_GT25_small/test.raxml.log
+
+Analysis started: 27-Jan-2026 17:35:36 / finished: 27-Jan-2026 17:35:36
+
+Elapsed time: 0.012 seconds
+
