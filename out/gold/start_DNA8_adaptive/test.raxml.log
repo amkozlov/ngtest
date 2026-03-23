@@ -1,0 +1,52 @@
+
+RAxML-NG v. 2.0.0-dev released on 12.03.2026 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 12-Mar-2026 14:40:56 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --start --msa /home/alex/hits/ngtest/data/dna8.fa --model GTR --tree adaptive --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/start_DNA8_adaptive/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Starting tree generation
+  start tree(s): adaptive
+  random seed: 1
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/dna8.fa
+[00:00:00] Loaded alignment with 8 taxa and 705 sites
+
+Alignment comprises 1 partitions and 332 patterns
+
+Partition 0: noname
+Model: GTR+FO
+Alignment sites / patterns: 705 / 332
+Gaps: 2.39 %
+Invariant sites: 45.82 %
+
+
+[00:00:00] Adaptive mode: Predicting difficulty of the MSA ...
+[00:00:00] Predicted difficulty: 0.02
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/start_DNA8_adaptive/test.raxml.rba
+
+[00:00:00] Generating 1 random starting tree(s) with 8 taxa
+[00:00:00] Generating 2 parsimony starting tree(s) with 8 taxa
+
+All starting trees saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/start_DNA8_adaptive/test.raxml.startTree
+
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/start_DNA8_adaptive/test.raxml.log
+
+Analysis started: 12-Mar-2026 14:40:56 / finished: 12-Mar-2026 14:40:56
+
+Elapsed time: 0.006 seconds
+
