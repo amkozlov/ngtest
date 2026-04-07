@@ -1,0 +1,30 @@
+
+RAxML-NG v. 2.0.0-dev released on 07.04.2026 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 07-Apr-2026 14:08:53 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --check --msa /home/alex/hits/ngtest/data/bad3.fa --model DNA --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/check_DNA_BAD3/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Alignment validation
+  start tree(s): 
+  random seed: 1
+  model selection information criterion: BIC
+  model selection heuristics: RHAS(ic-delta=10.000000, mode=all significant) FreeRate 
+  model selection RHAS: R I+R E I G I+G  (FreeRate categories: 2-10)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/bad3.fa
+
+ERROR: Error loading MSA: FASTA file does not contain equal size sequences
+
