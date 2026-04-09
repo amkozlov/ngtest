@@ -1,0 +1,86 @@
+
+RAxML-NG v. 2.0.0-dev released on 07.04.2026 by The Exelixis Lab.
+Developed by: Oleksiy M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth,
+              Julia Haag, Anastasis Togkousidis, Julius Wiegert, Christoph Stelz.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 4 cores, 23 GB RAM
+
+RAxML-NG was called at 07-Apr-2026 15:37:40 as follows:
+
+/home/alex/hits/raxml-ng/bin/raxml-ng-dev --bootstrap --msa /home/alex/hits/ngtest/data/prot21.fa --model AA --bs-trees 3 --prefix /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/bootstrap_PROT21_moose/test --seed 1 --threads 1 --redo
+
+Analysis options:
+  run mode: Model selection + Bootstrapping (adaptive) (Felsenstein Bootstrap)
+  start tree(s): 
+  bootstrap replicates: parsimony (3)
+  random seed: 1
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  stopping rule: OFF
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  FreeRate optimization method: AUTO
+  model selection information criterion: BIC
+  model selection heuristics: RHAS(ic-delta=10.000000, mode=all significant) FreeRate 
+  model selection RHAS: R I+R E I G I+G  (FreeRate categories: 2-10)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /home/alex/hits/ngtest/data/prot21.fa
+[00:00:00] Loaded alignment with 21 taxa and 113 sites
+
+Alignment comprises 1 partitions and 111 patterns
+
+Partition 0: noname
+Model: LG+G4m
+Alignment sites / patterns: 113 / 111
+Gaps: 12.64 %
+Invariant sites: 13.27 %
+
+
+[00:00:00] Adaptive mode: Predicting difficulty of the MSA ...
+[00:00:00] Predicted difficulty: 0.19
+
+NOTE: Binary MSA file created: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/bootstrap_PROT21_moose/test.raxml.rba
+
+
+Starting model selection with parsimony starting tree using 1 threads
+
+
+Best model(s):
+Partition #0: Q.LG+G4m (LogLH = -2893.411187  BIC = 5975.917886)
+
+Model selection time: 9.142 seconds
+
+NOTE: Binary MSA file updated: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/bootstrap_PROT21_moose/test.raxml.rba
+
+Parallelization scheme: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:09] Data distribution: max. partitions/sites/weight per thread: 1 / 111 / 8880
+[00:00:09] Data distribution: max. searches per worker: 3
+[00:00:09] Starting bootstrapping analysis with 3 replicates.
+
+[00:00:09] Bootstrap tree #1, logLikelihood: -2742.969318
+[00:00:10] Bootstrap tree #2, logLikelihood: -2777.265863
+[00:00:10] Bootstrap tree #3, logLikelihood: -2947.972176
+
+Bootstrap trees saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/bootstrap_PROT21_moose/test.raxml.bootstraps
+
+Execution log saved to: /home/alex/hits/ngtest/out/2.0.0-dev/T1W1/bootstrap_PROT21_moose/test.raxml.log
+
+Analysis started: 07-Apr-2026 15:37:40 / finished: 07-Apr-2026 15:37:51
+
+Elapsed time: 10.733 seconds
+
